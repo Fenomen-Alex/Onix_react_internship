@@ -2,8 +2,9 @@
 <html>
 <head></head>
 <body>
+<div>
 <b>Hello world</b>
-
+</div>
 <div id="footer">Here's footer</div>
 
 
