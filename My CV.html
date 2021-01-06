@@ -12,7 +12,7 @@
 	}
 	.header {
 		background-color: #4F3AB7;
-		margin-bottom: 25px;
+		margin: 15px;
 		border-radius: 10px;
 		text-align: center;
 	}
@@ -44,22 +44,27 @@
 		grid-area: sk;
 	}
 	.char {
-		padding: 10px;
+		border-radius: 15px;
 		display: grid;
 		grid-gap: 10px;
 		grid-template-columns: auto auto auto;
 		grid-template-rows: 50px;
 		grid-template-areas: "title title title"
 							 "lang CL sk";
-
-	}
-	.box {
-		  background-color: #444;
-		  color: #fff;
-		  border-radius: 5px;
-		  padding: 10px;
-		  font-size: 150%; 
+		width: 100%;
+		height: 100%;
+		background: linear-gradient(
+		15deg,
+		rgba(55, 4, 78, 4) 45%,
+		var(--box__color) var(--box__gradient--position)
+		);
+		transition: --box__color 0.5s ease, --box__gradient--position 1s 0.5s ease;
 		}
+
+	.char:hover {
+		--box__color: rgb(55, 4, 78);
+		--box__gradient--position: 50%;
+	}
 	b {
 		text-align: center;
 		font-size: 200%;
@@ -97,14 +102,33 @@
 	}
 	.projects {
 		grid-area: projects;
+		color: aquamarine;
+		font-family: Comic;
+	}
+	.b {
+		width: 100%;
+		height: 100%;
+		background: linear-gradient(
+		240deg,
+		rgba(55, 4, 78, 4) 45%,
+		var(--box__color) var(--box__gradient--position)
+		);
+		transition: --box__color 0.5s ease, --box__gradient--position 1s 0.5s ease;
+		border-radius: 12px;
+	}
+	.b:hover {
+		--box__color: rgb(55, 4, 78);
+		--box__gradient--position: 50%;
 	}
 </style>
 <body>
 	<div class="wrapper">
-		<div class="header"><b>My CV</b></div>
+		<div class="header"><b>Alex Fomenko</b></div>
 		<div class="main-content">
 			<div ><img class="myphoto" src="images\LukeSkywalker.png" width="100%" height="100%" alt="Lukeskywalker"></div>			
-			<div class="char"><b class="title">Skills and qualifications</b>
+			<div class="char">
+				<script src="./custom-properties.js"></script>
+				<b class="title">Skills and qualifications</b>
 				<div class="lang"><p>Languages</p>
 					<ul>
 						<li>Ukrainian(Native)</li>
