@@ -21,7 +21,7 @@
 	.main-content {
 		display: grid;
 		background-color: #37044e;
-		grid-template-columns: 300px auto;
+		grid-template-columns: 25% auto;
 		grid-auto-rows: auto;
 		grid-gap: 5px;
 		border-radius: 10px;
@@ -35,11 +35,12 @@
 		grid-area: title;
 	}
 	.lang {
-		margin-right: 15px;
+		margin-left: 15px;
 		grid-area: lang;
 	}
 	.CL {
 		grid-area: CL;
+		margin-right: 15px;
 	}
 	.b {
 		grid-area: b;
@@ -47,11 +48,12 @@
 	.char {
 		border-radius: 15px;
 		display: grid;
-		grid-gap: 10px;
-		grid-template-columns: 33% 34% 33%;
+		grid-gap: 30px;
+		grid-template-columns: auto 30% ;
 		grid-template-rows: 50px;
-		grid-template-areas: "title title title"
-							 "b CL lang";
+		grid-template-areas: "title title "
+							 "b CL "
+							 "lang CL";
 		width: 100%;
 		height: 100%;
 		background: linear-gradient(
@@ -72,6 +74,7 @@
 		color: white;
 	}
 	p {
+		font-size: 1.3em;
 		color: yellow;
 	}
 	li {
@@ -121,17 +124,17 @@
 		--box__gradient--position: 50%;
 	}
 	.container {
-	width: 100%;
-	background-color: #ddd;
-	border-radius: 10px;
+		width: 100%;
+		background-color: #ddd;
+		border-radius: 10px;
 	}
 
 	.skills {
-	border-radius: 9px;
-	text-align: right;
-	padding-top: 5px;
-	padding-bottom: 5px;
-	color: white;
+		border-radius: 9px;
+		text-align: right;
+		padding-top: 5px;
+		padding-bottom: 5px;
+		color: white;
 	}
 
 	.html {width: 80%; background-color: #084d85;}
@@ -145,6 +148,7 @@
 
 	.CL p {
 		text-align: center;
+		font-size: 100%;
 	}
 </style>
 <body>
@@ -165,7 +169,7 @@
 						<li>Deutsch(Elementary)</li>		
 					</ul>
 				</div>
-				<div class="CL"><p>Computer literacy</p><br>
+				<div class="CL"><b>Computer literacy</b><br>
 					<p>HTML</p>
 					<div class="container">
 						<div class="skills html">80%</div>
