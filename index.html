@@ -49,7 +49,7 @@
 		border-radius: 15px;
 		display: grid;
 		grid-gap: 30px;
-		grid-template-columns: auto 30% ;
+		grid-template-columns: auto 35s% ;
 		grid-template-rows: 50px;
 		grid-template-areas: "title title "
 							 "b CL "
@@ -123,7 +123,7 @@
 		--box__color: rgb(55, 4, 78);
 		--box__gradient--position: 50%;
 	}
-	.container {
+/* 	.container {
 		width: 100%;
 		background-color: #ddd;
 		border-radius: 10px;
@@ -144,11 +144,18 @@
 	.C {width: 80%; background-color: #084d85;}
 	.office {width: 80%; background-color: #084d85;}
 	.PS {width: 20%; background-color: #084d85;}
-	.WP {width: 40%; background-color: #084d85;}
+	.WP {width: 40%; background-color: #084d85;} */
 
 	.CL p {
 		text-align: center;
 		font-size: 100%;
+	}
+	label {
+		color: aquamarine;
+		font-size: 1.2em;
+	}
+	h2 {
+		color: wheat;
 	}
 </style>
 <body>
@@ -170,7 +177,23 @@
 					</ul>
 				</div>
 				<div class="CL"><b>Computer literacy</b><br>
-					<p>HTML</p>
+					<label for="html">HTML</label>
+					<progress id="html" max="100" value="80"> 80 </progress><br>
+					<label for="css">CSS</label>
+					<progress id="css" max="100" value="80"> 80 </progress><br>
+					<label for="js">JavaScript</label>
+					<progress id="js" max="100" value="20"> 20 </progress><br>
+					<label for="py">Pyton3</label>
+					<progress id="py" max="100" value="20"> 20 </progress><br>
+					<label for="office">MS Office</label>
+					<progress id="office" max="100" value="80"> 20 </progress><br>
+					<label for="ps">Adobe Photoshop</label>
+					<progress id="ps" max="100" value="20"> 20 </progress><br>
+					<label for="C">1C:Enterprise</label>
+					<progress id="C" max="100" value="80"> 80 </progress><br>
+					<label for="wp">JavaScript</label>
+					<progress id="wp" max="100" value="40"> 40 </progress><br>
+					<!-- <p>HTML</p>
 					<div class="container">
 						<div class="skills html">80%</div>
 					</div>
@@ -201,7 +224,7 @@
 					<p>WordPress</p>
 					<div class="container">
 						<div class="skills WP">40%</div>
-					</div>
+					</div> -->
 				</div>
 				<div class="b"><p class="title2">Education and Work Experience</p>
 					<div id="list">
