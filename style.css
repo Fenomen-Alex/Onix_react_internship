@@ -1,0 +1,152 @@
+body {
+    font-family: Helvetica;
+    margin: 10px;
+}
+.header {
+    background-color: #4F3AB7;
+    margin: 15px;
+    border-radius: 10px;
+    text-align: center;
+}
+.header:hover {
+    background-color: #773AB7;
+}
+.main-content {
+    display: grid;
+    background-color: #37044e;
+    grid-template-columns: 25% auto;
+    grid-auto-rows: auto;
+    grid-gap: 5px;
+    border-radius: 10px;
+}
+.myphoto {
+    border: 1px solid white;
+    border-radius: 10px;
+}
+.title {
+    margin: 10px;
+    grid-area: title;
+}
+.lang {
+    margin-left: 15px;
+    grid-area: lang;
+}
+.CL {
+    grid-area: CL;
+    margin-right: 15px;
+}
+.b {
+    grid-area: b;
+}
+.char {
+    border-radius: 15px;
+    display: grid;
+    grid-gap: 30px;
+    grid-template-columns: auto 35% ;
+    grid-template-rows: 50px;
+    grid-template-areas: "title title "
+                         "b CL "
+                         "lang CL";
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(
+    15deg,
+    rgba(55, 4, 78, 4) 45%,
+    var(--box__color) var(--box__gradient--position)
+    );
+    transition: --box__color 0.5s ease, --box__gradient--position 1s 0.5s ease;
+    }
+
+.char:hover {
+    --box__color: rgb(55, 4, 78);
+    --box__gradient--position: 50%;
+}
+b {
+    text-align: center;
+    font-size: 200%;
+    color: white;
+}
+p {
+    font-size: 1.3em;
+    color: yellow;
+}
+li {
+    color: rgb(100, 255, 151);
+}
+.footer {
+    text-align: center;
+}
+.title2 {
+    margin: 20px;
+}
+.sites {
+    display: grid;
+    grid-gap: 10px;
+    grid-template-columns: auto auto auto;
+    grid-template-areas: "projects projects projects"
+                        "one two three";
+}
+.one {
+    grid-area: one;
+}
+.two {
+    grid-area: two;
+}
+.three {
+    grid-area: three;
+    padding-right: 15px;
+}
+.projects {
+    grid-area: projects;
+    color: aquamarine;
+    font-family: Comic;
+}
+.sk {
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(
+    240deg,
+    rgba(55, 4, 78, 4) 45%,
+    var(--box__color) var(--box__gradient--position)
+    );
+    transition: --box__color 0.5s ease, --box__gradient--position 1s 0.5s ease;
+    border-radius: 12px;
+}
+.sk:hover {
+    --box__color: rgb(55, 4, 78);
+    --box__gradient--position: 50%;
+}
+/* 	.container {
+    width: 100%;
+    background-color: #ddd;
+    border-radius: 10px;
+}
+
+.skills {
+    border-radius: 9px;
+    text-align: right;
+    padding-top: 5px;
+    padding-bottom: 5px;
+    color: white;
+}
+
+.html {width: 80%; background-color: #084d85;}
+.css {width: 80%; background-color: #084d85;}
+.js {width: 20%; background-color: #084d85;}
+.py {width: 20%; background-color: #084d85;}
+.C {width: 80%; background-color: #084d85;}
+.office {width: 80%; background-color: #084d85;}
+.PS {width: 20%; background-color: #084d85;}
+.WP {width: 40%; background-color: #084d85;} */
+
+.CL p {
+    text-align: center;
+    font-size: 100%;
+}
+label {
+    color: aquamarine;
+    font-size: 1.2em;
+}
+h2 {
+    color: wheat;
+}
