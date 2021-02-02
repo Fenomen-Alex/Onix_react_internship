@@ -11,7 +11,7 @@ header {
     border-radius: 5px;
     border: 2px solid aqua;
     min-height: 64px;
-    background: url(images/favicon.ico) round;
+    background: url(../images/favicon.ico) round;
     background-color: #20232A;
 }
 .task {
@@ -46,6 +46,9 @@ header {
 h2 {
     color: #59D7FB; 
     border-radius: 2px; 
+}
+.solution {
+    padding-left: 30px;
 }
 a {
     padding: 5px; 
