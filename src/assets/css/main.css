@@ -88,22 +88,26 @@ a {
     border-radius: 10px;
 }
 .img-git {
-    max-width: 100%;
+    width: 100%;
+    max-width: 150px;
     float: left;
     margin: 3px;
 }
 .img-node {
-    max-width: 100%;
+    width: 100%;
+    max-width: 150px;
     float: left;
     margin: 3px;
 }
 .img-html {
-    max-width: 100%;
+    width: 100%;
+    max-width: 150px;
     float: left;
     margin: 3px;
 }
 .img-css {
-    max-width: 100%;
+    width: 100%;
+    max-width: 150px;
     float: left;
     margin: 3px;
 }
