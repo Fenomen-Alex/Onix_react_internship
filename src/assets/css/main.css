@@ -30,12 +30,24 @@ header {
     box-shadow: 0 0 10px rgb(255, 255, 132);
 }
 .wrapper {
-    margin: 15px 0 15px 0;
-    padding: 10px 25px 10px 10px;
+    margin: 0 auto;
+    padding: 10px 25px 10px 0;
     display: grid;
-    grid-template-columns: 33% 34% 33%;
+    grid-template-columns: 33.333% 33.333% 33.333%;
     grid-gap: 10px;
 }
+
+@media (max-width: 1200px){
+    .wrapper{
+        grid-template-columns: 50% 50%;
+    }
+}
+@media (max-width: 760px){
+    .wrapper{
+        grid-template-columns: 100%;
+    }
+}
+
 .author {
     background-color: rgb(67, 67, 252); 
     float: right; 

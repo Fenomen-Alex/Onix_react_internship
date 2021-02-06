@@ -7,7 +7,6 @@ import '../assets/css/main.css';
 const Apptask=()=>{
     return (
     <React.Fragment>
-        <strong className='solution'>Решение задания:</strong>
         <div className="task">
             <h2><b>Входное задание в интернатуру</b></h2>
             <b>Тема</b><span>: git, node, npm, основы html css</span><br/>
