@@ -2,13 +2,17 @@ import React from 'react';
 
 import '../assets/css/main.css';
 
+const authorLink = 'https://fenomen-alex.github.io/Onix_react_internship/';
+const authorText = 'Автор: Александр Фоменко';
+const authorGitHubLink = 'https://github.com/Fenomen-Alex/Onix_react_internship';
+const authorGitHubText = 'Ссылка на GitHub';
 const Appfooter=()=> {
     return(
         <div className="footer">
             <div className="author">
-                <h2> <a href="https://fenomen-alex.github.io/Onix_react_internship/" target="blank">Автор: Александр Фоменко</a>
+                <h2> <a href={authorLink} target="blank">{authorText}</a>
                 </h2>
-                <h3><a href="https://github.com/Fenomen-Alex/Onix_react_internship" target="blank">Ссылка на GitHub</a></h3>
+                <h3><a href={authorGitHubLink} target="blank">{authorGitHubText}</a></h3>
             </div>
         </div>
     )
