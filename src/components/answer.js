@@ -21,7 +21,7 @@ const VCS = () => {
 
 const gitTitle = 'GIT';
 const gitText = ' позволяет разработчикам иметь множество совершенно независимых веток кода. Создание, удаление и объединение этих веток происходит без каких-либо проблем и больших затрат времени. Команды';
-const gitCommandsList = 'checkout, add, commit, pull, push . ';
+const gitCommandsList = [" checkout,"," add,"," commit,"," pull,"," push . "];
 const gitCommand = 'Команда';
 const commandCheckout = 'checkout ';
 const commandCheckoutText = 'используется для создания, удаления и работы между ветками. Команда';
