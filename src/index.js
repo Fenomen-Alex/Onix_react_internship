@@ -8,6 +8,7 @@ import Apptask from '../src/components/task';
 import Answer from './components/answer';
 import Appfooter from './components/footer';
 import Conspect from './components/secondLesson';
+import LessonThree from './components/thirdLesson';
 
 ReactDOM.render(
     <React.Fragment>
@@ -15,6 +16,7 @@ ReactDOM.render(
         <Apptask />
         <Answer />
         <Conspect />
+        <LessonThree />
         <Appfooter />
     </React.Fragment>,
     document.getElementById('root')

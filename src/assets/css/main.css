@@ -123,3 +123,26 @@ a {
     float: left;
     margin: 3px;
 }
+
+.secondLesson {
+    width: 100%;
+    margin: 15px 0 15px 0;
+    border: 2px solid rgb(255, 255, 132); 
+    border-radius: 10px; 
+    padding: 15px 5px;
+    box-shadow: 0 0 10px rgb(237, 255, 132) ;
+}
+
+.lessonThree{
+    width: 100%;
+    margin: 15px 0 15px 0;
+    border: 2px solid rgb(132, 226, 255); 
+    border-radius: 10px; 
+    padding: 15px 5px;
+    box-shadow: 0 0 10px rgb(132, 226, 255) ;
+}
+
+.lessonThree td {
+    border:5px solid #ccc;
+    padding: 5px;
+  }

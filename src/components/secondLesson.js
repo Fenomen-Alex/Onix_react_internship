@@ -30,7 +30,25 @@ const Conspect = () => {
         console.log(varNum +" больше, чем " + varStr)
     };
 
-    return (<div />);
+    return (
+        <div className="secondLesson">
+            <h1>Lesson 2</h1>
+            <p>
+            Go to console to look what's happening))<br />
+            let varStr = 'Some string'; <br />
+            let varNum = 123; <br />
+            let varBool = true;<br />
+            let varObj = {"{"}<br />
+                "name" : "Alex",<br />
+                "birthday" : "30/11/1991"<br />
+            {"}"};<br />
+            let varArr = [varStr, varNum, varBool, varObj];<br />
+            let varUndefined;<br />
+            let varNaN = NaN;<br />
+
+            </p>
+        </div>
+    );
 };
 
 export default Conspect;
