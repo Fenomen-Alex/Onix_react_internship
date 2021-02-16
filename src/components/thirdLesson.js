@@ -52,8 +52,7 @@ let starWarsRev = starWarsAll.reverse();
 
 const LessonThree = () => {
         console.log(starWarsAll.sort());
-        console.log(starWarsRev.sort((a, b) => a - b
-        ));
+        console.log(starWarsRev.sort((a, b) => a - b));
     return(
     <div className="lessonThree">
         <h1>Lesson 3</h1>
