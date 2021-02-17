@@ -21,49 +21,55 @@ const starWarsSequel = [
 class Table extends React.Component {
   data = starWarsOriginal.concat(starWarsPrequel, starWarsSequel);
   constructor(props) {
-    super(props)
-    this.sortByClick = this.sortByClick.bind(this)
-    this.state = {sorted : true}
-}
+    super(props);
+    this.sortByClick = this.sortByClick.bind(this);
+    this.state = { sorted: true };
+  }
 
-sortByClick = () => {
-    this.setState(state => ({
-        sorted : !this.sorted
-    }))
+  sortByClick = () => {
+    this.setState((state) => ({
+      sorted: !this.sorted,
+    }));
     if (this.state.sorted) {
-        return this.data.reverse();
-    } 
+      return this.data.reverse();
+    }
     return this.data.sort();
-}
+  };
 
-addByClick = () => {
-    this.setState(state => ({
-        added : ++this.added
-    }))
-    return this.data.push(["year","film"])
-}
+  addByClick = () => {
+    this.setState((state) => ({
+      added: ++this.added,
+    }));
+    return this.data.push(["year", "film"]);
+  };
 
-removeByClick = () => {
-    this.setState(state => ({
-        removed : ++this.removed
-    }))
+  removeByClick = () => {
+    this.setState((state) => ({
+      removed: ++this.removed,
+    }));
     if (this.state.sorted) {
-        return this.data.pop()
-    } 
-    return this.data.shift()
-}
+      return this.data.pop();
+    }
+    return this.data.shift();
+  };
 
   render() {
     return (
       <div>
         <table className="myTable">
           <thead>
-            <th>
-                <Button color="secondary" onClick={this.sortByClick}>Years</Button>
-            </th>
-            <th>
-                <Button color="secondary" onClick={this.sortByClick}>Films</Button>
-            </th>
+            <tr>
+              <th>
+                <Button color="secondary" onClick={this.sortByClick}>
+                  Years
+                </Button>
+              </th>
+              <th>
+                <Button color="secondary" onClick={this.sortByClick}>
+                  Films
+                </Button>
+              </th>
+            </tr>
           </thead>
           <tbody>
             {this.data.map((numList, i) => (
@@ -75,8 +81,12 @@ removeByClick = () => {
             ))}
           </tbody>
         </table>
-        <Button color="primary" onClick={this.addByClick}>Add</Button>
-        <Button color="primary" onClick={this.removeByClick}>Delete</Button>
+        <Button color="primary" onClick={this.addByClick}>
+          Add
+        </Button>
+        <Button color="primary" onClick={this.removeByClick}>
+          Delete
+        </Button>
       </div>
     );
   }
@@ -85,21 +95,55 @@ removeByClick = () => {
 let starWarsAll = starWarsOriginal.concat(starWarsSequel, starWarsPrequel);
 let starWarsRev = starWarsAll.reverse();
 function SelectionSort(A) {
-    var n = A.length;
-    for (var i = 0; i < n-1; i++)
-     { var min = i;
-       for (var j = i+1; j < n; j++)
-        { if (A[j] < A[min]) min = j; } 
-       var t = A[min]; A[min] = A[ i ]; A[ i ] = t;
-     }                    
-    return A;
+  var n = A.length;
+  for (var i = 0; i < n - 1; i++) {
+    var min = i;
+    for (var j = i + 1; j < n; j++) {
+      if (A[j] < A[min]) min = j;
+    }
+    var t = A[min];
+    A[min] = A[i];
+    A[i] = t;
+  }
+  return A;
 }
 SelectionSort(starWarsRev);
 
 const LessonThree = () => {
   console.log(starWarsRev);
-  console.log([3,6,2,4,8,3,5,5,5,7,8,3,34,534,6,5474,5,5485,623,423,346,867,679,780,34,346,].sort());
-  console.log([21,58,1,588,465,589,65,7,6,5,358,47,69].sort((a,b) => a - b));
+  console.log(
+    [
+      3,
+      6,
+      2,
+      4,
+      8,
+      3,
+      5,
+      5,
+      5,
+      7,
+      8,
+      3,
+      34,
+      534,
+      6,
+      5474,
+      5,
+      5485,
+      623,
+      423,
+      346,
+      867,
+      679,
+      780,
+      34,
+      346,
+    ].sort()
+  );
+  console.log(
+    [21, 58, 1, 588, 465, 589, 65, 7, 6, 5, 358, 47, 69].sort((a, b) => a - b)
+  );
   return (
     <div className="lessonThree">
       <h1>Lesson 3</h1>
