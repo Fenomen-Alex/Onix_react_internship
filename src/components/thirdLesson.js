@@ -20,16 +20,34 @@ const starWarsSequel = [
 
 class Table extends React.Component {
   data = starWarsOriginal.concat(starWarsPrequel, starWarsSequel);
+  constructor(props) {
+    super(props)
+    this.sortByClick = this.sortByClick.bind(this)
+    this.state = {sorted : true}
+}
+
+sortByClick = () => {
+    this.setState(state => ({
+        sorted : !this.sorted
+    }))
+    if (this.state.sorted) {
+        return this.data.reverse();
+    } 
+    return this.data.sort();
+}
+
+
+
   render() {
     return (
       <div>
         <table className="myTable">
           <thead>
             <th>
-                <Button color="secondary">Years</Button>
+                <Button color="secondary" onClick={this.sortByClick}>Years</Button>
             </th>
             <th>
-                <Button color="secondary">Films</Button>
+                <Button color="secondary" onClick={this.sortByClick}>Films</Button>
             </th>
           </thead>
           <tbody>
@@ -42,7 +60,7 @@ class Table extends React.Component {
             ))}
           </tbody>
         </table>
-        <Button color="primary">Add</Button>
+        <Button color="primary" onClick={this.addByClick}>Add</Button>
         <Button color="primary">Delete</Button>
       </div>
     );
