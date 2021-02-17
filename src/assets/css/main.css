@@ -142,7 +142,11 @@ a {
     box-shadow: 0 0 10px rgb(132, 226, 255) ;
 }
 
-.lessonThree td {
+.myTable {
     border:5px solid #ccc;
     padding: 5px;
   }
+.myTable td,th {
+    text-align: center;
+    border:3px solid #ccc;
+}

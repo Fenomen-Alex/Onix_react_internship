@@ -1,65 +1,78 @@
-import React from 'react';
+import React from "react";
 
-import { Button } from 'reactstrap';
+import { Button } from "reactstrap";
 
 const starWarsOriginal = [
-    [1977, "Звёздные войны. Эпизод IV: Новая надежда"],
-    [1980, "Звёздные войны. Эпизод V: Империя наносит ответный удар"],
-    [1983, "Звёздные войны. Эпизод VI: Возвращение джедая"],
+  [1977, "Звёздные войны. Эпизод IV: Новая надежда"],
+  [1980, "Звёздные войны. Эпизод V: Империя наносит ответный удар"],
+  [1983, "Звёздные войны. Эпизод VI: Возвращение джедая"],
 ];
 const starWarsPrequel = [
-    [1999, "Звёздные войны. Эпизод I: Скрытая угроза"],
-    [2002, "Звёздные войны. Эпизод II: Атака клонов"],
-    [2005, "Звёздные войны. Эпизод III: Месть ситхов"],
+  [1999, "Звёздные войны. Эпизод I: Скрытая угроза"],
+  [2002, "Звёздные войны. Эпизод II: Атака клонов"],
+  [2005, "Звёздные войны. Эпизод III: Месть ситхов"],
 ];
 const starWarsSequel = [
-    [2015, "Звёздные войны. Эпизод VII: Пробуждение Силы"],
-    [2017, "Звёздные войны. Эпизод VIII: Последние джедаи"],
-    [2019, "Звёздные войны. Эпизод IX: Скайуокер. Восход"],
+  [2015, "Звёздные войны. Эпизод VII: Пробуждение Силы"],
+  [2017, "Звёздные войны. Эпизод VIII: Последние джедаи"],
+  [2019, "Звёздные войны. Эпизод IX: Скайуокер. Восход"],
 ];
 
-class Table extends React.Component{
- data = starWarsOriginal.concat(starWarsPrequel, starWarsSequel);
- render(){
-   return(
-       <div>
-        <table className = "myTable">
-            <tbody>
-            {
-                    this.data.map((numList,i) =>(
-                    <tr key={i}>
-                        {
-                        numList.map((num,j)=>
-                            <td key={j}>{num}</td>
-                        )
-                        }
-                    </tr>
-                    ))
-            }
-            </tbody>
+class Table extends React.Component {
+  data = starWarsOriginal.concat(starWarsPrequel, starWarsSequel);
+  render() {
+    return (
+      <div>
+        <table className="myTable">
+          <thead>
+            <th>
+                <Button color="secondary">Years</Button>
+            </th>
+            <th>
+                <Button color="secondary">Films</Button>
+            </th>
+          </thead>
+          <tbody>
+            {this.data.map((numList, i) => (
+              <tr key={i}>
+                {numList.map((num, j) => (
+                  <td key={j}>{num}</td>
+                ))}
+              </tr>
+            ))}
+          </tbody>
         </table>
-            <Button color="primary" >Add</Button>
-            <Button color="primary" >Delete</Button>
-       </div>
-   );
- };
-};
+        <Button color="primary">Add</Button>
+        <Button color="primary">Delete</Button>
+      </div>
+    );
+  }
+}
 
 let starWarsAll = starWarsOriginal.concat(starWarsSequel, starWarsPrequel);
 let starWarsRev = starWarsAll.reverse();
-
-
+function SelectionSort(A) {
+    var n = A.length;
+    for (var i = 0; i < n-1; i++)
+     { var min = i;
+       for (var j = i+1; j < n; j++)
+        { if (A[j] < A[min]) min = j; } 
+       var t = A[min]; A[min] = A[ i ]; A[ i ] = t;
+     }                    
+    return A;
+}
+SelectionSort(starWarsRev);
 
 const LessonThree = () => {
-        console.log(starWarsAll.sort());
-        console.log(starWarsRev.sort((a, b) => a - b));
-    return(
+  console.log(starWarsRev);
+  console.log([3,6,2,4,8,3,5,5,5,7,8,3,34,534,6,5474,5,5485,623,423,346,867,679,780,34,346,].sort());
+  console.log([21,58,1,588,465,589,65,7,6,5,358,47,69].sort((a,b) => a - b));
+  return (
     <div className="lessonThree">
-        <h1>Lesson 3</h1>
-        <Table />
-
+      <h1>Lesson 3</h1>
+      <Table />
     </div>
-    );
+  );
 };
 
 export default LessonThree;
