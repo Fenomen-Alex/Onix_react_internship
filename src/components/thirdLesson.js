@@ -36,7 +36,22 @@ sortByClick = () => {
     return this.data.sort();
 }
 
+addByClick = () => {
+    this.setState(state => ({
+        added : ++this.added
+    }))
+    return this.data.push(["year","film"])
+}
 
+removeByClick = () => {
+    this.setState(state => ({
+        removed : ++this.removed
+    }))
+    if (this.state.sorted) {
+        return this.data.pop()
+    } 
+    return this.data.shift()
+}
 
   render() {
     return (
@@ -61,7 +76,7 @@ sortByClick = () => {
           </tbody>
         </table>
         <Button color="primary" onClick={this.addByClick}>Add</Button>
-        <Button color="primary">Delete</Button>
+        <Button color="primary" onClick={this.removeByClick}>Delete</Button>
       </div>
     );
   }
