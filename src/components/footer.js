@@ -2,7 +2,7 @@ import React from 'react';
 
 import '../assets/css/main.css';
 
-const authorLink = 'https://fenomen-alex.github.io/Onix_react_internship/';
+const authorLink = 'https://fenomen-alex.github.io/AlexCV/';
 const authorText = 'Автор: Александр Фоменко';
 const authorGitHubLink = 'https://github.com/Fenomen-Alex/Onix_react_internship';
 const authorGitHubText = 'Ссылка на GitHub';
