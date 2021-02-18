@@ -1,6 +1,6 @@
 import React from "react";
 
-import { Button } from "reactstrap";
+import { Button, Table } from "reactstrap";
 
 const starWarsOriginal = [
   [1977, "Звёздные войны. Эпизод IV: Новая надежда"],
@@ -18,7 +18,7 @@ const starWarsSequel = [
   [2019, "Звёздные войны. Эпизод IX: Скайуокер. Восход"],
 ];
 
-class Table extends React.Component {
+class FilmTable extends React.Component {
   data = starWarsOriginal.concat(starWarsPrequel, starWarsSequel);
   constructor(props) {
     super(props);
@@ -56,7 +56,7 @@ class Table extends React.Component {
   render() {
     return (
       <div>
-        <table className="myTable">
+        <Table className="myTable">
           <thead>
             <tr>
               <th>
@@ -80,7 +80,7 @@ class Table extends React.Component {
               </tr>
             ))}
           </tbody>
-        </table>
+        </Table>
         <Button color="primary" onClick={this.addByClick}>
           Add
         </Button>
@@ -147,7 +147,7 @@ const LessonThree = () => {
   return (
     <div className="lessonThree">
       <h1>Lesson 3</h1>
-      <Table />
+      <FilmTable />
     </div>
   );
 };

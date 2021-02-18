@@ -145,6 +145,7 @@ a {
 .myTable {
     border:5px solid #ccc;
     padding: 5px;
+    color: rgb(125, 167, 168);
   }
 .myTable td,th {
     text-align: center;
