@@ -99,7 +99,7 @@ function SelectionSort(A) {
   for (var i = 0; i < n - 1; i++) {
     var min = i;
     for (var j = i + 1; j < n; j++) {
-      if (A[j] < A[min]) min = j;
+      if (A[j][0] < A[min][0]) min = j;
     }
     var t = A[min];
     A[min] = A[i];
