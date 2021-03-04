@@ -9,6 +9,7 @@ import Answer from './components/answer';
 import Appfooter from './components/footer';
 import Conspect from './components/secondLesson';
 import LessonThree from './components/thirdLesson';
+import LessonFour from './components/fourthLesson';
 
 ReactDOM.render(
     <React.Fragment>
@@ -17,6 +18,7 @@ ReactDOM.render(
         <Answer />
         <Conspect />
         <LessonThree />
+        <LessonFour />
         <Appfooter />
     </React.Fragment>,
     document.getElementById('root')
