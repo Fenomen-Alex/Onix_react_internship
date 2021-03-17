@@ -7,7 +7,6 @@ const starWarsData = [
   { id: 1, year: 2015, film: "Авёздные войны. Эпизод VII: Пробуждение Силы" },
   { id: 3, year: 2019, film: "Звёздные войны. Эпизод IX: Скайуокер. Восход" },
 ];
-const MIN_INPUT_YEAR_LENGTH = 4;
 class FilmTable extends React.Component {
   //   data = starWarsOriginal.concat(starWarsPrequel, starWarsSequel);
   //   data = [...starWarsOriginal, ...starWarsSequel, ...starWarsSequel];
@@ -89,6 +88,7 @@ class FilmTable extends React.Component {
       <div>
         <Table className="myTable">
           <thead>
+            <tr>
             <th>
               <Button color="secondary" onClick={() => this.sortByClick()}>
                 Years
@@ -99,8 +99,7 @@ class FilmTable extends React.Component {
                 Films
               </Button>
             </th>
-            <th>
-            </th>
+            </tr>
           </thead>
           <tbody>
             {this.state.data.map((item) => (
@@ -111,9 +110,9 @@ class FilmTable extends React.Component {
               </tr>
             ))}
           </tbody>
-          <input type="text" value={filmInputYear} onChange={(e)=>this.handleInputChange(e, "filmInputYear")}/>
-          <input type="text" value={filmInputText} onChange={(e)=>this.handleInputChange(e, "filmInputText")}/>
         </Table>
+        <input type="text" value={filmInputYear} onChange={(e)=>this.handleInputChange(e, "filmInputYear")}/>
+        <input type="text" value={filmInputText} onChange={(e)=>this.handleInputChange(e, "filmInputText")}/>
         <Button color="primary" onClick={this.addByClick}>
           Add
         </Button>
