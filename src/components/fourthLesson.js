@@ -7,14 +7,17 @@ const starWarsData = [
   { id: 1, year: 2015, film: "Авёздные войны. Эпизод VII: Пробуждение Силы" },
   { id: 3, year: 2019, film: "Звёздные войны. Эпизод IX: Скайуокер. Восход" },
 ];
+
+const asc = "asc"
+const desc = "desc"
 class FilmTable extends React.Component {
   //   data = starWarsOriginal.concat(starWarsPrequel, starWarsSequel);
   //   data = [...starWarsOriginal, ...starWarsSequel, ...starWarsSequel];
   constructor(props) {
     super(props);
     this.state = {
-      yearDirection: "asc",
-      filmDirection: "asc",
+      yearDirection: asc,
+      filmDirection: asc,
       data: starWarsData,
       filmInputYear: "",
       filmInputText: "",
@@ -32,12 +35,12 @@ class FilmTable extends React.Component {
     const { yearDirection } = this.state;
     let result = 0;
     if (a.year < b.year) {
-      result = yearDirection === "asc" ? -1 : 1;
+      result = yearDirection === asc ? -1 : 1;
     }
     if (a.year > b.year) {
-      result = yearDirection === "asc" ? 1 : -1;
+      result = yearDirection === asc ? 1 : -1;
     }
-    this.setState({ yearDirection: yearDirection === "asc" ? "desc" : "asc" });
+    this.setState({ yearDirection: yearDirection === asc ? desc : asc });
     return result;
   };
   sortByFilm = (array, field) => {
@@ -46,10 +49,10 @@ class FilmTable extends React.Component {
     for (var i = 0; i < n - 1; i++) {
       var min = i;
       for (var j = i + 1; j < n; j++) {
-          if(filmDirection === "asc" && array[j][field] < array[min][field]){
+          if(filmDirection === asc && array[j][field] < array[min][field]){
             min = j;
           }
-          if(filmDirection === "desc" && array[j][field] > array[min][field]){
+          if(filmDirection === desc && array[j][field] > array[min][field]){
             min = j;
           }
         }
@@ -57,7 +60,7 @@ class FilmTable extends React.Component {
       array[min] = array[i];
       array[i] = t;
     }
-    this.setState({ filmDirection: filmDirection === "asc" ? "desc" : "asc" });
+    this.setState({ filmDirection: filmDirection === asc ? desc : asc });
     return array;
   };
   addRow = () => {

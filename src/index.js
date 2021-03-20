@@ -10,6 +10,7 @@ import Appfooter from './components/footer';
 import Conspect from './components/secondLesson';
 import LessonThree from './components/thirdLesson';
 import LessonFour from './components/fourthLesson';
+import LessonFive from './components/fifthLesson';
 
 ReactDOM.render(
     <React.Fragment>
@@ -19,6 +20,7 @@ ReactDOM.render(
         <Conspect />
         <LessonThree />
         <LessonFour />
+        <LessonFive />
         <Appfooter />
     </React.Fragment>,
     document.getElementById('root')
