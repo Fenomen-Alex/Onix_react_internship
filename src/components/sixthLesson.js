@@ -10,7 +10,9 @@ class TableFromITunes extends React.Component {
     componentDidMount () {
         fetch(apiUrl)
         .then(response => response.json())
-        .then(res => this.setState({tracks: res.results}))
+        .then(res => this.setState({tracks: res.results}),
+              error => console.log(error)
+        )
         // console.log(result)
     }
 
@@ -40,13 +42,13 @@ class TableFromITunes extends React.Component {
     }
 }
 
-const LessonFive = () => {
+const LessonSix = () => {
     return(
-        <div className="lesson-five">
-            <h1>Lesson 5</h1>
+        <div className="lesson-six">
+            <h1>Lesson 6</h1>
             <TableFromITunes />
         </div>
     )
 }
 
-export default LessonFive;
+export default LessonSix;
