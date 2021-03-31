@@ -86,7 +86,6 @@ class FilmTable extends React.Component {
   }
   render() {
       const {filmInputYear, filmInputText} = this.state;
-    console.log("state", this.state);
     return (
       <div>
         <Table className="myTable">
@@ -102,6 +101,7 @@ class FilmTable extends React.Component {
                 Films
               </Button>
             </th>
+            <th>Delete</th>
             </tr>
           </thead>
           <tbody>
@@ -114,8 +114,8 @@ class FilmTable extends React.Component {
             ))}
           </tbody>
         </Table>
-        <input type="text" value={filmInputYear} onChange={(e)=>this.handleInputChange(e, "filmInputYear")}/>
-        <input type="text" value={filmInputText} onChange={(e)=>this.handleInputChange(e, "filmInputText")}/>
+        <input type="text" placeholder="Year" value={filmInputYear} onChange={(e)=>this.handleInputChange(e, "filmInputYear")}/>
+        <input type="text" placeholder="Film" value={filmInputText} onChange={(e)=>this.handleInputChange(e, "filmInputText")}/>
         <Button color="primary" onClick={this.addByClick}>
           Add
         </Button>

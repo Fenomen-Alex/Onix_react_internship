@@ -142,12 +142,27 @@ a {
     box-shadow: 0 0 10px rgb(132, 226, 255) ;
 }
 
-.myTable {
+.myTable,.myAPITable {
     border:5px solid #ccc;
     padding: 5px;
     color: rgb(125, 167, 168);
   }
-.myTable td,th {
+.myTable,.myAPITable,.table td,th {
     text-align: center;
     border:3px solid #ccc;
+}
+.alert {
+    color: red;
+    font-size: 32px;
+    text-align: center;
+}
+.selected {
+    background-color: #28292c;
+}
+.over {
+    background-color: white;
+
+}
+.drag-end {
+    background-color: #383B41;
 }
