@@ -3,7 +3,7 @@ import React from "react";
 import { Table } from "reactstrap";
 
 const apiUrl =
-  "https://itunes.apple.com/search?term=starwars&limit=10&entity=song";
+  "https://itunes.apple.com/search?term=star+wars&limit=25&entity=song";
 const tableHeader = ["Image", "Track Title", "Artist Name", "Price"];
 class TableFromITunes extends React.Component {
   state = {
@@ -123,11 +123,11 @@ class TableFromITunes extends React.Component {
   };
 
   onLoad = () => {
-    alert("Image loaded");
+    console.log("Image loaded");
   };
 
   onError = () => {
-    alert("Image not loaded");
+    console.log("Image not loaded");
   };
 
   render() {
@@ -160,7 +160,7 @@ class TableFromITunes extends React.Component {
                   index
                 ) => (
                   <tr
-                    key={trackId}
+                    key={index}
                     className={`${isOver ? "over" : ""} ${
                       isActive ? "selected" : ""
                     }`}
