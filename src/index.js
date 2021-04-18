@@ -1,21 +1,22 @@
-import React from "react";
-import ReactDOM from "react-dom";
-import "bootstrap/dist/css/bootstrap.min.css";
-import { BrowserRouter as Router, Switch, Route } from "react-router-dom";
+import React from 'react';
+import ReactDOM from 'react-dom';
+import 'bootstrap/dist/css/bootstrap.min.css';
+import { BrowserRouter as Router, Switch, Route } from 'react-router-dom';
 
-import "../src/assets/css/main.css";
-import Appheader from "../src/components/header";
-import Apptask from "../src/components/task";
-import Answer from "./components/answer";
-import Appfooter from "./components/footer";
-import Conspect from "./components/secondLesson";
-import LessonThree from "./components/thirdLesson";
-import LessonFour from "./components/fourthLesson";
-import LessonSix from "./components/sixthLesson";
-import NavComp from "./components/nav";
+import './assets/css/main.css';
+import Appheader from './components/header';
+import Apptask from './pages/task';
+import Answer from './pages/answer';
+import Appfooter from './components/footer';
+import Conspect from './pages/secondLesson';
+import LessonThree from './pages/thirdLesson';
+import LessonFour from './pages/fourthLesson';
+import LessonSix from './pages/sixthLesson';
+import NavComp from './components/nav';
+import NinthLesson from "./pages/ninthLesson";
 
 ReactDOM.render(
-  <React.Fragment>
+  <>
     <Appheader />
     <Router>
       <NavComp />
@@ -23,31 +24,27 @@ ReactDOM.render(
         <Route path="/answer">
           <Answer />
         </Route>
-        <Route path="/secondlesson">
+        <Route path="/second-lesson">
           <Conspect />
         </Route>
-        <Route path="/thirdlesson">
+        <Route path="/third-lesson">
           <LessonThree />
         </Route>
-        <Route path="/fourthlesson">
+        <Route path="/fourth-lesson">
           <LessonFour />
         </Route>
-        <Route path="/sixthlesson">
+        <Route path="/sixth-lesson">
           <LessonSix />
+        </Route>
+        <Route path="/ninth-lesson" exact>
+          <NinthLesson />
         </Route>
         <Route path="/" exact>
           <Apptask />
         </Route>
       </Switch>
     </Router>
-
-    {/* <Apptask />
-        <Answer />
-        <Conspect />
-        <LessonThree />
-        <LessonFour />
-        <LessonSix /> */}
     <Appfooter />
-  </React.Fragment>,
-  document.getElementById("root")
+  </>,
+  document.getElementById('root')
 );

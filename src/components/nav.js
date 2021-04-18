@@ -1,12 +1,12 @@
-import React from "react";
-import { Link } from "react-router-dom";
+import React from 'react';
+import { Link } from 'react-router-dom';
 import {
   Navbar,
   Nav,
   NavItem,
-} from "reactstrap";
+} from 'reactstrap';
 
-import "../assets/css/main.css";
+import '../assets/css/main.css';
 
 const NavComp = () => {
   //   const [isOpen, setIsOpen] = useState(false);
@@ -20,19 +20,22 @@ const NavComp = () => {
           <Link to="/">Main</Link>
         </NavItem>
         <NavItem>
-          <Link to="/answer">Conspect</Link>
+          <Link to="/answer">Conspectus</Link>
         </NavItem>
         <NavItem>
-          <Link to="/secondlesson">Lesson 2</Link>
+          <Link to="/second-lesson">Lesson 2</Link>
         </NavItem>
         <NavItem>
-          <Link to="/thirdlesson">Lesson 3</Link>
+          <Link to="/third-lesson">Lesson 3</Link>
         </NavItem>
         <NavItem>
-          <Link to="/fourthlesson">Lesson 4</Link>
+          <Link to="/fourth-lesson">Lesson 4</Link>
         </NavItem>
         <NavItem>
-          <Link to="/sixthlesson">Lesson 6</Link>
+          <Link to="/sixth-lesson">Lesson 6</Link>
+        </NavItem>
+        <NavItem>
+          <Link to="/ninth-lesson">Lesson 9</Link>
         </NavItem>
       </Nav>
     </Navbar>

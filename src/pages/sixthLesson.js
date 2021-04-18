@@ -1,15 +1,13 @@
-import React from "react";
+import React from 'react';
+import { Table } from 'reactstrap';
 
-import { Table } from "reactstrap";
-
-const apiUrl =
-  "https://itunes.apple.com/search?term=star+wars&limit=25&entity=song";
-const tableHeader = ["Image", "Track Title", "Artist Name", "Price"];
+const apiUrl = 'https://itunes.apple.com/search?term=star+wars&limit=25&entity=song';
+const tableHeader = ['Image', 'Track Title', 'Artist Name', 'Price'];
 class TableFromITunes extends React.Component {
   state = {
     tracks: [],
     activeTrackId: null,
-    activeTrackClass: "",
+    activeTrackClass: '',
     errorMessage: null,
   };
 
@@ -17,24 +15,25 @@ class TableFromITunes extends React.Component {
     fetch(apiUrl)
       .then((response) => response.json())
       .then(
-        (res) =>
-          this.setState({
-            tracks: res.results.map((item) => ({
-              ...item,
-              isActive: false,
-              isOver: false,
-            })),
-          }),
+        (res) => this.setState({
+          tracks: res.results.map((item) => ({
+            ...item,
+            isActive: false,
+            isOver: false,
+          })),
+        }),
         (error) => {
           this.setState({ errorMessage: error });
           console.log(this.state.errorMessage);
         }
       );
-    document.addEventListener("keyup", this.handleKeyDown);
+    document.addEventListener('keyup', this.handleKeyDown);
   }
+
   componentWillUnmount() {
-    document.removeEventListener("keyup", this.handleKeyDown);
+    document.removeEventListener('keyup', this.handleKeyDown);
   }
+
   dragStartHandler(e, trackId) {
     const newTracks = this.state.tracks.map((item) => ({
       ...item,
@@ -60,14 +59,16 @@ class TableFromITunes extends React.Component {
     }));
     this.setState({ tracks: newTracks });
   }
+
   swap = (array, i, j) => {
     [array[i], array[j]] = [array[j], array[i]];
     return array;
   };
+
   dropHandler(e, trackToSwap) {
     e.preventDefault();
     const { tracks } = this.state;
-    let activeTrack = tracks.findIndex((x) => x.isActive);
+    const activeTrack = tracks.findIndex((x) => x.isActive);
     const swapped = this.swap([...tracks], activeTrack, trackToSwap);
     const newTracks = swapped.map((item) => ({
       ...item,
@@ -76,14 +77,6 @@ class TableFromITunes extends React.Component {
     }));
     this.setState({ draged: !this.state.draged, tracks: newTracks });
   }
-
-  //   sortRows = (rowA, rowB) => {
-  //     if (this.state.tracks.indexOf(rowA) > this.state.tracks.indexOf(rowB)) {
-  //       return 1;
-  //     } else {
-  //       return -1;
-  //     }
-  //   };
 
   onClick = (trackId) => {
     const newTracks = this.state.tracks.map((item) => ({
@@ -123,16 +116,15 @@ class TableFromITunes extends React.Component {
   };
 
   onLoad = () => {
-    console.log("Image loaded");
+    console.log('Image loaded');
   };
 
   onError = () => {
-    console.log("Image not loaded");
+    console.log('Image not loaded');
   };
 
   render() {
     const { tracks, errorMessage } = this.state;
-    console.log("tracks", tracks);
     return (
       <>
         {errorMessage && <div className="alert">{errorMessage.message}</div>}
@@ -161,10 +153,10 @@ class TableFromITunes extends React.Component {
                 ) => (
                   <tr
                     key={index}
-                    className={`${isOver ? "over" : ""} ${
-                      isActive ? "selected" : ""
+                    className={`${isOver ? 'over' : ''} ${
+                      isActive ? 'selected' : ''
                     }`}
-                    draggable={true}
+                    draggable
                     onDragStart={(e) => this.dragStartHandler(e, trackId)}
                     onDragLeave={(e) => this.dragEndHandler(e)}
                     onDragEnd={(e) => this.dragEndHandler(e, trackId)}
@@ -177,7 +169,10 @@ class TableFromITunes extends React.Component {
                     </td>
                     <td>{trackName}</td>
                     <td>{artistName}</td>
-                    <td>{trackPrice}$</td>
+                    <td>
+                      {trackPrice}
+                      $
+                    </td>
                   </tr>
                 )
               )}

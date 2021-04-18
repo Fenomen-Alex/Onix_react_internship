@@ -1,25 +1,26 @@
-import React from "react";
+import React from 'react';
 
-import { Button, Table } from "reactstrap";
+import { Button, Table } from 'reactstrap';
 
 const starWarsOriginal = [
-  [1977, "Звёздные войны. Эпизод IV: Новая надежда"],
-  [1980, "Звёздные войны. Эпизод V: Империя наносит ответный удар"],
-  [1983, "Звёздные войны. Эпизод VI: Возвращение джедая"],
+  [1977, 'Звёздные войны. Эпизод IV: Новая надежда'],
+  [1980, 'Звёздные войны. Эпизод V: Империя наносит ответный удар'],
+  [1983, 'Звёздные войны. Эпизод VI: Возвращение джедая'],
 ];
 const starWarsPrequel = [
-  [1999, "Звёздные войны. Эпизод I: Скрытая угроза"],
-  [2002, "Звёздные войны. Эпизод II: Атака клонов"],
-  [2005, "Звёздные войны. Эпизод III: Месть ситхов"],
+  [1999, 'Звёздные войны. Эпизод I: Скрытая угроза'],
+  [2002, 'Звёздные войны. Эпизод II: Атака клонов'],
+  [2005, 'Звёздные войны. Эпизод III: Месть ситхов'],
 ];
 const starWarsSequel = [
-  [2015, "Звёздные войны. Эпизод VII: Пробуждение Силы"],
-  [2017, "Звёздные войны. Эпизод VIII: Последние джедаи"],
-  [2019, "Звёздные войны. Эпизод IX: Скайуокер. Восход"],
+  [2015, 'Звёздные войны. Эпизод VII: Пробуждение Силы'],
+  [2017, 'Звёздные войны. Эпизод VIII: Последние джедаи'],
+  [2019, 'Звёздные войны. Эпизод IX: Скайуокер. Восход'],
 ];
 
 class FilmTable extends React.Component {
   data = starWarsOriginal.concat(starWarsPrequel, starWarsSequel);
+
   constructor(props) {
     super(props);
     this.sortByClick = this.sortByClick.bind(this);
@@ -40,7 +41,7 @@ class FilmTable extends React.Component {
     this.setState((state) => ({
       added: ++this.added,
     }));
-    return this.data.push(["year", "film"]);
+    return this.data.push(['year', 'film']);
   };
 
   removeByClick = () => {
@@ -92,16 +93,16 @@ class FilmTable extends React.Component {
   }
 }
 
-let starWarsAll = starWarsOriginal.concat(starWarsSequel, starWarsPrequel);
-let starWarsRev = starWarsAll.reverse();
+const starWarsAll = starWarsOriginal.concat(starWarsSequel, starWarsPrequel);
+const starWarsRev = starWarsAll.reverse();
 function SelectionSort(A) {
-  var n = A.length;
-  for (var i = 0; i < n - 1; i++) {
-    var min = i;
-    for (var j = i + 1; j < n; j++) {
+  const n = A.length;
+  for (let i = 0; i < n - 1; i++) {
+    let min = i;
+    for (let j = i + 1; j < n; j++) {
       if (A[j][0] < A[min][0]) min = j;
     }
-    var t = A[min];
+    const t = A[min];
     A[min] = A[i];
     A[i] = t;
   }
