@@ -1,5 +1,5 @@
 import React from 'react';
-
+import StyledTheme from "../components/StyledWrapper";
 import { Button, Table } from 'reactstrap';
 
 const starWarsOriginal = [
@@ -110,7 +110,8 @@ function SelectionSort(A) {
 }
 SelectionSort(starWarsRev);
 
-const LessonThree = () => {
+const LessonThree = (props) => {
+    console.log("PPPP", props);
   console.log(starWarsRev);
   console.log(
     [
@@ -146,11 +147,11 @@ const LessonThree = () => {
     [21, 58, 1, 588, 465, 589, 65, 7, 6, 5, 358, 47, 69].sort((a, b) => a - b)
   );
   return (
-    <div className="lessonThree">
+    <div className={`${props.theme} lessonThree`}>
       <h1>Lesson 3</h1>
       <FilmTable />
     </div>
   );
 };
 
-export default LessonThree;
+export default StyledTheme(LessonThree);

@@ -1,7 +1,7 @@
 import React from 'react';
 import { Table } from 'reactstrap';
 
-const apiUrl = 'https://itunes.apple.com/search?term=star+wars&limit=25&entity=song';
+const apiUrl = 'https://itunes.apple.com/search?term=starwars&limit=25&entity=song';
 const tableHeader = ['Image', 'Track Title', 'Artist Name', 'Price'];
 class TableFromITunes extends React.Component {
   state = {
