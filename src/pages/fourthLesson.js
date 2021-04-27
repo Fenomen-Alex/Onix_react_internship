@@ -57,7 +57,9 @@ class FilmTable extends React.Component {
         }
       }
       const t = array[min];
+      // eslint-disable-next-line no-param-reassign
       array[min] = array[i];
+      // eslint-disable-next-line no-param-reassign
       array[i] = t;
     }
     this.setState({ filmDirection: filmDirection === asc ? desc : asc });
@@ -69,6 +71,7 @@ class FilmTable extends React.Component {
     this.setState({ data: [...data, { year: 'Year', film: 'Film' }] });
   }
 
+  // eslint-disable-next-line consistent-return
   addByClick = () => {
     const { filmInputYear, filmInputText, data } = this.state;
     if (filmInputYear.length !== 4 || filmInputText.length < 5) {
@@ -97,6 +100,7 @@ class FilmTable extends React.Component {
 
   render() {
     const { filmInputYear, filmInputText, data } = this.state;
+    /* eslint-disable-next-line jsx-a11y/click-events-have-key-events,jsx-a11y/no-noninteractive-element-interactions */
     return (
       <div>
         <Table className="myTable">
@@ -120,6 +124,8 @@ class FilmTable extends React.Component {
               <tr key={item.id}>
                 <td>{item.year}</td>
                 <td>{item.film}</td>
+                {/* eslint-disable-next-line max-len */}
+                {/* eslint-disable-next-line jsx-a11y/click-events-have-key-events,jsx-a11y/no-noninteractive-element-interactions */}
                 <td onClick={() => this.removeById(item.id)}>-</td>
               </tr>
             ))}

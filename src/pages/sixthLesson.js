@@ -1,12 +1,16 @@
+/* eslint-disable no-console */
 import React from 'react';
 import { Table } from 'reactstrap';
 
 const apiUrl = 'https://itunes.apple.com/search?term=starwars&limit=25&entity=song';
 const tableHeader = ['Image', 'Track Title', 'Artist Name', 'Price'];
 class TableFromITunes extends React.Component {
+  // eslint-disable-next-line react/state-in-constructor
   state = {
     tracks: [],
+    // eslint-disable-next-line react/no-unused-state
     activeTrackId: null,
+    // eslint-disable-next-line react/no-unused-state
     activeTrackClass: '',
     errorMessage: null,
   };
@@ -24,6 +28,7 @@ class TableFromITunes extends React.Component {
         }),
         (error) => {
           this.setState({ errorMessage: error });
+          // eslint-disable-next-line react/destructuring-assignment
           console.log(this.state.errorMessage);
         }
       );
@@ -34,7 +39,9 @@ class TableFromITunes extends React.Component {
     document.removeEventListener('keyup', this.handleKeyDown);
   }
 
+  // eslint-disable-next-line react/sort-comp
   dragStartHandler(e, trackId) {
+    // eslint-disable-next-line react/destructuring-assignment,react/no-access-state-in-setstate
     const newTracks = this.state.tracks.map((item) => ({
       ...item,
       isActive: item.trackId === trackId,
@@ -44,6 +51,7 @@ class TableFromITunes extends React.Component {
 
   dragEndHandler(e) {
     e.preventDefault();
+    // eslint-disable-next-line react/destructuring-assignment,react/no-access-state-in-setstate
     const newTracks = this.state.tracks.map((item) => ({
       ...item,
       isOver: false,
@@ -53,6 +61,7 @@ class TableFromITunes extends React.Component {
 
   dragOverHandler(e, trackId) {
     e.preventDefault();
+    // eslint-disable-next-line react/destructuring-assignment,react/no-access-state-in-setstate
     const newTracks = this.state.tracks.map((item) => ({
       ...item,
       isOver: item.trackId === trackId,
@@ -61,6 +70,7 @@ class TableFromITunes extends React.Component {
   }
 
   swap = (array, i, j) => {
+    // eslint-disable-next-line no-param-reassign
     [array[i], array[j]] = [array[j], array[i]];
     return array;
   };
@@ -75,10 +85,12 @@ class TableFromITunes extends React.Component {
       isOver: false,
       isActive: false,
     }));
+    // eslint-disable-next-line react/destructuring-assignment,react/no-access-state-in-setstate
     this.setState({ draged: !this.state.draged, tracks: newTracks });
   }
 
   onClick = (trackId) => {
+    // eslint-disable-next-line react/destructuring-assignment,react/no-access-state-in-setstate
     const newTracks = this.state.tracks.map((item) => ({
       ...item,
       isActive: item.trackId === trackId && !item.isActive,
@@ -152,6 +164,7 @@ class TableFromITunes extends React.Component {
                   index
                 ) => (
                   <tr
+                    /* eslint-disable-next-line react/no-array-index-key */
                     key={index}
                     className={`${isOver ? 'over' : ''} ${
                       isActive ? 'selected' : ''

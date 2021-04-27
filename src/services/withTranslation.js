@@ -1,17 +1,18 @@
-import React, { Component } from "react";
-import getTranslation from "./getTranslation"
+import React, { Component } from 'react';
+import getTranslation from './getTranslation';
 
-const withTranslation = (componentName)=>(WrappedComponent)=> {
-    return class extends Component {
-        render() {
-            const translation = getTranslation("en", componentName)
-            return (
-                <WrappedComponent
-                    translation={translation}
-                    {...this.props}
-                />
-            );
-        }
-    };
-}
+const withTranslation = (componentName) => (WrappedComponent) => {
+  return class extends Component {
+    render() {
+      const translation = getTranslation('en', componentName);
+      return (
+        <WrappedComponent
+          translation={translation}
+          /* eslint-disable-next-line react/jsx-props-no-spreading */
+          {...this.props}
+        />
+      );
+    }
+  };
+};
 export default withTranslation;

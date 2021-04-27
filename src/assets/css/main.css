@@ -8,15 +8,14 @@ header {
     border-radius: 5px;
     border: 2px solid aqua;
     min-height: 64px;
-    background: url(../images/favicon.ico) round;
-    background-color: #20232A;
+    background: #20232A url(../images/favicon.ico) round;
 }
 .light header {
     border-radius: 5px;
     border: 2px solid aqua;
     min-height: 64px;
-    background: url(../images/unnamed.png) round;
-    background-color: rgba(128, 255, 251, 0.43);}
+    background: rgba(128, 255, 251, 0.43) url(../images/unnamed.png) round;
+}
 .light {
     color: #20232ae3;
     background-color: rgba(128, 255, 251, 0.6);

@@ -14,7 +14,8 @@ let varUndefined;
 const varNaN = NaN;
 
 const Conspect = () => {
-  console.log(typeof varStr, 
+  // eslint-disable-next-line no-console
+  console.log(typeof varStr,
     typeof varNum, 
     typeof varBool, 
     typeof varObj, 
@@ -23,8 +24,10 @@ const Conspect = () => {
     typeof varNaN,
     varArr);
   if (varStr > varNum) {
+    // eslint-disable-next-line no-console
     console.log(`${varStr} больше, чем ${varNum}`);
   } else {
+    // eslint-disable-next-line no-console
     console.log(`${varNum} больше, чем ${varStr}`);
   }
 
@@ -32,9 +35,11 @@ const Conspect = () => {
     <div className="secondLesson">
       <h1>Lesson 2</h1>
       <p>
+        {/* eslint-disable-next-line react/no-unescaped-entities */}
         Go to console to look what's happening))
         <br />
-        let varStr = 'Some string'; 
+        {/* eslint-disable-next-line react/no-unescaped-entities */}
+        let varStr = 'Some string';
         {' '}
         <br />
         let varNum = 123; 
@@ -46,8 +51,10 @@ const Conspect = () => {
         {' '}
         {'{'}
         <br />
+        {/* eslint-disable-next-line react/no-unescaped-entities */}
         "name" : "Alex",
         <br />
+        {/* eslint-disable-next-line react/no-unescaped-entities */}
         "birthday" : "30/11/1991"
         <br />
         {'}'}
