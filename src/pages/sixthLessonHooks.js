@@ -1,9 +1,8 @@
 /* eslint-disable no-console,no-undef */
 import React, { useEffect, useState } from 'react';
 import { Table } from 'reactstrap';
+import { apiUrl, tableHeader } from '../Constants/Constants';
 
-const apiUrl = 'https://itunes.apple.com/search?term=starwars&limit=25&entity=song';
-const tableHeader = ['Image', 'Track Title', 'Artist Name', 'Price'];
 const LessonSixHooks = () => {
   const [tracks, setTracks] = useState([]);
 

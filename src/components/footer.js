@@ -1,11 +1,10 @@
 import React from 'react';
 
 import '../assets/css/main.css';
+import {
+  authorGitHubLink, authorGitHubText, authorLink, authorText
+} from '../Constants/Constants';
 
-const authorLink = 'https://fenomen-alex.github.io/AlexCV/';
-const authorText = 'Автор: Александр Фоменко';
-const authorGitHubLink = 'https://github.com/Fenomen-Alex/Onix_react_internship';
-const authorGitHubText = 'Ссылка на GitHub';
 const Appfooter = () => {
   return (
     <div className="footer">

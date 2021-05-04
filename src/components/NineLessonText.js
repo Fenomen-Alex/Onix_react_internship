@@ -1,5 +1,5 @@
 import React from 'react';
-import withTranslation from '../services/withTranslation';
+import withTranslation from '../pages/hoc/withTranslation';
 
 // eslint-disable-next-line react/prop-types
 const NineLessonText = ({ translation }) => {

@@ -1,14 +1,16 @@
 import React from 'react';
 import { Button } from 'reactstrap';
+import { dark } from '../Constants/Constants';
 
-const ThemeToggler = (props) => {
+// eslint-disable-next-line react/prop-types
+const ThemeToggler = ({ theme, handleChangeTheme }) => {
   return (
     <div>
       <Button
           /* eslint-disable-next-line react/destructuring-assignment,react/prop-types */
-        color={props.theme === 'dark' ? 'primary' : 'secondary'}
+        color={theme === dark ? 'primary' : 'secondary'}
           /* eslint-disable-next-line react/destructuring-assignment,react/prop-types */
-        onClick={props.handleChangeTheme}
+        onClick={handleChangeTheme}
       >
         Switch theme
       </Button>

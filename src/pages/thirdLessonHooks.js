@@ -2,22 +2,10 @@ import React, { useState } from 'react';
 import { Button, Table } from 'reactstrap';
 // eslint-disable-next-line import/no-cycle
 import StyledTheme from '../components/StyledWrapper';
-
-const starWarsOriginal = [
-  [1977, 'Звёздные войны. Эпизод IV: Новая надежда'],
-  [1980, 'Звёздные войны. Эпизод V: Империя наносит ответный удар'],
-  [1983, 'Звёздные войны. Эпизод VI: Возвращение джедая'],
-];
-const starWarsPrequel = [
-  [1999, 'Звёздные войны. Эпизод I: Скрытая угроза'],
-  [2002, 'Звёздные войны. Эпизод II: Атака клонов'],
-  [2005, 'Звёздные войны. Эпизод III: Месть ситхов'],
-];
-const starWarsSequel = [
-  [2015, 'Звёздные войны. Эпизод VII: Пробуждение Силы'],
-  [2017, 'Звёздные войны. Эпизод VIII: Последние джедаи'],
-  [2019, 'Звёздные войны. Эпизод IX: Скайуокер. Восход'],
-];
+import {
+  // eslint-disable-next-line import/named
+  starWarsOriginal, starWarsPrequel, starWarsSequel
+} from '../Constants/Constants';
 
 const LessonThreeHooks = () => {
   const filmData = [...starWarsOriginal, ...starWarsPrequel, ...starWarsSequel];

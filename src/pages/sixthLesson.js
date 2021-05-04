@@ -1,9 +1,8 @@
 /* eslint-disable no-console */
 import React from 'react';
 import { Table } from 'reactstrap';
+import { apiUrl, tableHeader } from '../Constants/Constants';
 
-const apiUrl = 'https://itunes.apple.com/search?term=starwars&limit=25&entity=song';
-const tableHeader = ['Image', 'Track Title', 'Artist Name', 'Price'];
 class TableFromITunes extends React.Component {
   // eslint-disable-next-line react/state-in-constructor
   state = {
