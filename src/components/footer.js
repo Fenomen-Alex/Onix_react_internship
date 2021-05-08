@@ -2,7 +2,8 @@ import React from 'react';
 
 import '../assets/css/main.css';
 import {
-  authorGitHubLink, authorGitHubText, authorLink, authorText
+  // eslint-disable-next-line import/named
+  footerContent
 } from '../Constants/Constants';
 
 const Appfooter = () => {
@@ -11,9 +12,9 @@ const Appfooter = () => {
       <div className="author">
         <h2> 
           {' '}
-          <a href={authorLink} target="blank">{authorText}</a>
+          <a href={footerContent.authorLink} target="blank">{footerContent.authorText}</a>
         </h2>
-        <h3><a href={authorGitHubLink} target="blank">{authorGitHubText}</a></h3>
+        <h3><a href={footerContent.authorGitHubLink} target="blank">{footerContent.authorGitHubText}</a></h3>
       </div>
     </div>
   );

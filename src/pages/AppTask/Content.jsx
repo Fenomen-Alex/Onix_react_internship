@@ -1,64 +1,55 @@
 import React from 'react';
-import {
-  discuss, discussCss,
-  discussGit, discussHtml,
-  discussNode,
-  discussNPM,
-  discussVCM,
-  firstTask, firstTaskContinue,
-  gitBasics,
-  gitCommands, gitHubLink, gitHubLinkText, secondTask, task,
-  w3cLink, w3cLinkText
-} from '../../Constants/Constants';
+// eslint-disable-next-line import/named
+import { content } from '../../Constants/Constants';
 
 const Content = () => {
   return (
     <>
-      <b>{discuss}</b>
+      <b>{content.discuss}</b>
       <ol>
         <li>
-          <span>{discussVCM}</span>
+          <span>{content.discussVCM}</span>
         </li>
         <li>
-          <span>{discussGit}</span>
+          <span>{content.discussGit}</span>
           <ol>
             <li>
-              <span>{gitCommands}</span>
+              <span>{content.gitCommands}</span>
             </li>
             <li>
-              <span>{gitBasics}</span>
+              <span>{content.gitBasics}</span>
             </li>
           </ol>
         </li>
         <li>
-          <span>{discussNode}</span>
+          <span>{content.discussNode}</span>
         </li>
         <li>
-          <span>{discussNPM}</span>
+          <span>{content.discussNPM}</span>
         </li>
         <li>
-          <span>{discussHtml}</span>
-          <a href={w3cLink}>
-            <span>{w3cLinkText}</span>
+          <span>{content.discussHtml}</span>
+          <a href={content.w3cLink}>
+            <span>{content.w3cLinkText}</span>
           </a>
         </li>
         <li>
-          <span>{discussCss}</span>
+          <span>{content.discussCss}</span>
         </li>
       </ol>
       <br />
-      <b>{task}</b>
+      <b>{content.contentTask}</b>
       <span> </span>
       <ol>
         <li>
-          <span>{firstTask}</span>
-          <a href={gitHubLink}>
-            <span>{gitHubLinkText}</span>
+          <span>{content.firstTask}</span>
+          <a href={content.gitHubLink}>
+            <span>{content.gitHubLinkText}</span>
           </a>
-          <span>{firstTaskContinue}</span>
+          <span>{content.firstTaskContinue}</span>
         </li>
         <li>
-          <span>{secondTask}</span>
+          <span>{content.secondTask}</span>
         </li>
       </ol>
     </>

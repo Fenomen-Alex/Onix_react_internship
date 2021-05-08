@@ -8,7 +8,7 @@ import Conspect from './pages/secondLesson';
 // import LessonThree from './pages/thirdLesson';
 // import LessonFour from './pages/fourthLesson';
 // import LessonSix from './pages/sixthLesson';
-import NinthLesson from './pages/ninthLesson';
+import NineLessonText from './pages/NineLessonText';
 import AppTask from './pages/AppTask/AppTask';
 import Appfooter from './components/footer';
 // eslint-disable-next-line import/no-cycle
@@ -17,6 +17,7 @@ import LessonFourHooks from './pages/fourthLessonHooks';
 import LessonSixHooks from './pages/sixthLessonHooks';
 import { dark, light } from './Constants/Constants';
 import { ThemeContext } from './context/themeContext';
+import './i18n';
 
 class App extends Component {
   constructor(props) {
@@ -33,7 +34,6 @@ class App extends Component {
     };
 
     render() {
-      // eslint-disable-next-line no-shadow
       const { theme } = this.state;
       return (
         <ThemeContext.Provider value={theme}>
@@ -58,7 +58,7 @@ class App extends Component {
                   <LessonSixHooks />
                 </Route>
                 <Route path="/ninth-lesson" exact>
-                  <NinthLesson />
+                  <NineLessonText />
                 </Route>
                 <Route path="/" exact>
                   <AppTask />

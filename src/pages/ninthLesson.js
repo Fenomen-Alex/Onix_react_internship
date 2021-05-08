@@ -1,6 +1,7 @@
+// Using i18n instead of this component
 import React, { useState } from 'react';
 import { Button } from 'reactstrap';
-import NineLessonText from '../components/NineLessonText';
+import NineLessonText from './NineLessonText';
 
 const NinthLesson = () => {
   const [lang, setLang] = useState('ru');

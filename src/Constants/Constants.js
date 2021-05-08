@@ -1,8 +1,11 @@
 // footer.js
-export const authorLink = 'https://fenomen-alex.github.io/AlexCV/';
-export const authorText = 'Автор: Александр Фоменко';
-export const authorGitHubLink = 'https://github.com/Fenomen-Alex/Onix_react_internship';
-export const authorGitHubText = 'Ссылка на GitHub';
+const authorLink = 'https://fenomen-alex.github.io/AlexCV/';
+const authorText = 'Автор: Александр Фоменко';
+const authorGitHubLink = 'https://github.com/Fenomen-Alex/Onix_react_internship';
+const authorGitHubText = 'Ссылка на GitHub';
+export const footerContent = {
+  authorLink, authorText, authorGitHubLink, authorGitHubText
+};
 
 // vsc.jsx
 export const vscTitleRu = 'Система управления версиями';
@@ -127,42 +130,65 @@ export const apiUrl = 'https://itunes.apple.com/search?term=starwars&limit=25&en
 export const tableHeader = ['Image', 'Track Title', 'Artist Name', 'Price'];
 
 // theTask.jsx
-export const entryTask = 'Входное задание в интернатуру';
-export const theme = 'Тема: ';
-export const themeItems = 'git, node, npm, основы html css';
-export const aim = 'Цель: ';
+
+const entryTask = 'Входное задание в интернатуру';
+const theme = 'Тема: ';
+const themeItems = 'git, node, npm, основы html css';
+const aim = 'Цель: ';
 const aimItem1 = 'изучить базовые функции git, node, npm. ';
 const aimItem2 = 'Подготовить к дальнейшей работе систему. Определить уровень умения верстки.';
-export const aimItem = aimItem1 + aimItem2;
+const aimItem = aimItem1 + aimItem2;
+export const task = {
+  entryTask, theme, themeItems, aim, aimItem
+};
 
 // content.jsx
-export const discuss = 'Обсуждаемый материал: ';
-export const discussVCM = 'Что такое система контроля версий и зачем она нужна';
-export const discussGit = 'Git';
-export const gitCommands = 'checkout, add, commit, pull, push';
-export const gitBasics = 'Основы ветвления и слияния ';
-export const discussNode = 'что такое nodejs, зачем он нужен и как устанавливать';
-export const discussNPM = 'Что такое менеджер пакетов, установка npm';
+const discuss = 'Обсуждаемый материал: ';
+const discussVCM = 'Что такое система контроля версий и зачем она нужна';
+const discussGit = 'Git';
+const gitCommands = 'checkout, add, commit, pull, push';
+const gitBasics = 'Основы ветвления и слияния ';
+const discussNode = 'что такое nodejs, зачем он нужен и как устанавливать';
+const discussNPM = 'Что такое менеджер пакетов, установка npm';
 const discussHtml1 = 'Html: теги, структура html страницы, блочные и строчные элементы, ';
 const discussHtml2 = 'списки, таблицы, атрибуты, текст, якоря, ссылки,';
-export const discussHtml = discussHtml1 + discussHtml2;
-export const w3cLinkText = 'w3c валидация';
-export const w3cLink = 'https://valclassator.w3.org/';
-export const discussCss = 'Css: стили, классы, идентификаторы, селекторы, псевдоклассы, псевдоэлементы';
-export const task = 'Задание:';
-export const firstTask = 'установить git, node, npm. Создать аккаунт на ';
-export const gitHubLink = 'https://github.com/';
-export const gitHubLinkText = 'https://github.com/';
+const discussHtml = discussHtml1 + discussHtml2;
+const w3cLinkText = 'w3c валидация';
+const w3cLink = 'https://valclassator.w3.org/';
+const discussCss = 'Css: стили, классы, идентификаторы, селекторы, псевдоклассы, псевдоэлементы';
+const contentTask = 'Задание:';
+const firstTask = 'установить git, node, npm. Создать аккаунт на ';
+const gitHubLink = 'https://github.com/';
+const gitHubLinkText = 'https://github.com/';
 const firstTaskContinue1 = 'и публичный репозиторий для проекта. ';
 const firstTaskContinue2 = 'Клонировать из репозитория проект, ';
 const firstTaskContinue3 = 'сделать любые изменения в нем сделать коммит и запушить изменения.';
-export const firstTaskContinue = firstTaskContinue1 + firstTaskContinue2 + firstTaskContinue3;
+const firstTaskContinue = firstTaskContinue1 + firstTaskContinue2 + firstTaskContinue3;
 const secondTask1 = 'создать простой шаблон страницы для дальнейшей работы. ';
 const secondTask2 = 'Страница должна содержать хедер, футер, блок с коротким описанием проекта ';
 const secondTask3 = 'и элементы из раздела “Обсуждаемый материал этого урока”(хотя бы по одному примеру). ';
 const secondTask4 = 'На странице должны быть: имя и фамилия автора, ссылка на github аккаунт, ';
 const secondTask5 = 'ссылка на оригинал дизайна. Страница должна проходить валидацию на w3c.';
-export const secondTask = secondTask1 + secondTask2 + secondTask3 + secondTask4 + secondTask5;
+const secondTask = secondTask1 + secondTask2 + secondTask3 + secondTask4 + secondTask5;
+export const content = {
+  discuss,
+  discussVCM,
+  discussGit,
+  gitCommands,
+  gitBasics,
+  discussNode,
+  discussNPM,
+  discussHtml,
+  w3cLinkText,
+  w3cLink,
+  discussCss,
+  contentTask,
+  firstTask,
+  gitHubLink,
+  gitHubLinkText,
+  firstTaskContinue,
+  secondTask
+};
 
 // theme
 export const dark = 'dark';

@@ -1,20 +1,20 @@
 import React from 'react';
 import {
-  aim, aimItem, entryTask, theme, themeItems
+  task
 } from '../../Constants/Constants';
 
 const TheTask = () => {
   return (
     <>
       <h2>
-        <b>{entryTask}</b>
+        <b>{task.entryTask}</b>
       </h2>
-      <b>{theme}</b>
-      <span>{themeItems}</span>
+      <b>{task.theme}</b>
+      <span>{task.themeItems}</span>
       <br />
-      <b>{aim}</b>
+      <b>{task.aim}</b>
       <span>
-        {aimItem}
+        {task.aimItem}
       </span>
       <br />
     </>
