@@ -2,7 +2,7 @@
 import React, { useEffect, useState } from 'react';
 import { Table } from 'reactstrap';
 import { useTranslation } from 'react-i18next';
-import { apiUrl, tableHeader } from '../Constants/Constants';
+import { apiUrl } from '../Constants/Constants';
 
 const LessonSixHooks = () => {
   const { t } = useTranslation('translations');
@@ -119,7 +119,7 @@ const LessonSixHooks = () => {
       <Table className="myAPITable">
         <thead>
           <tr>
-            {tableHeader.map((i) => (
+            {t('sixthLesson.tableHeader', { returnObjects: true }).map((i) => (
               <th key={i}>{i}</th>
             ))}
           </tr>
