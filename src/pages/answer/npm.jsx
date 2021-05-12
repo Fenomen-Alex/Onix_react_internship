@@ -1,24 +1,22 @@
+/* eslint-disable import/named */
 import React from 'react';
-import {
-  // eslint-disable-next-line import/named
-  npmAbout, npmAboutText, npmCommInstall, npmCommList, npmCommUpdate,
-  npmText, npmTitle
-} from '../../Constants/Constants';
+import { useTranslation } from 'react-i18next';
 
 const NPM = () => {
+  const { t } = useTranslation('translations');
   return (
     <div className="npm">
-      <b>{npmTitle}</b>
-      {npmText}
+      <b>{t('answer.npm.npmTitle')}</b>
+      {t('answer.npm.npmText')}
       <br />
-      <b>{npmAbout}</b>
-      {npmAboutText}
+      <b>{t('answer.npm.npmAbout')}</b>
+      {t('answer.npm.npmAboutText')}
       <br />
-      {npmCommList}
+      {t('answer.npm.npmCommList')}
       <br />
-      {npmCommUpdate}
+      {t('answer.npm.npmCommUpdate')}
       <br />
-      {npmCommInstall}
+      {t('answer.npm.npmCommInstall')}
       <br />
     </div>
   );

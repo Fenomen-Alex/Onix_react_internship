@@ -1,15 +1,14 @@
 import React from 'react';
+import { useTranslation } from 'react-i18next';
 import html from '../../assets/images/html.png';
-import {
-  htmlText, htmlTitle
-} from '../../Constants/Constants';
 
 const HTML = () => {
+  const { t } = useTranslation('translations');
   return (
     <div className="html">
       <img className="img-html" src={html} alt="html" />
-      <b>{htmlTitle}</b>
-      {htmlText}
+      <b>{t('answer.html.htmlTitle')}</b>
+      {t('answer.html.htmlText')}
     </div>
   );
 };

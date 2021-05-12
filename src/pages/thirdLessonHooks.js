@@ -1,17 +1,17 @@
 import React, { useState } from 'react';
 import { Button, Table } from 'reactstrap';
-// eslint-disable-next-line import/no-cycle
+import { useTranslation } from 'react-i18next';
 import StyledTheme from '../components/StyledWrapper';
 import {
-  // eslint-disable-next-line import/named
   starWarsOriginal, starWarsPrequel, starWarsSequel
 } from '../Constants/Constants';
 
 const LessonThreeHooks = () => {
+  const { t } = useTranslation('translations');
+
   const filmData = [...starWarsOriginal, ...starWarsPrequel, ...starWarsSequel];
 
-  // eslint-disable-next-line no-unused-vars
-  const [data, setData] = useState(filmData);
+  const [data] = useState(filmData);
   
   const [sorted, setSorted] = useState(true);
 
@@ -43,20 +43,20 @@ const LessonThreeHooks = () => {
   
   return (
     <>
-      <p>Lesson 3 Using Hooks</p>
+      <p>{t('lessonThree.lessonThreeHooksTitle')}</p>
       <Table className="myTable">
         <thead>
           <tr>
             <th>
               {/* eslint-disable-next-line no-return-assign */}
               <Button color="secondary" onClick={onSort}>
-                Years
+                {t('lessonThree.btnYears')}
               </Button>
             </th>
             <th>
               {/* eslint-disable-next-line no-return-assign */}
               <Button color="secondary" onClick={onSort}>
-                Films
+                {t('lessonThree.btnFilms')}
               </Button>
             </th>
           </tr>
@@ -74,10 +74,10 @@ const LessonThreeHooks = () => {
         </tbody>
       </Table>
       <Button color="primary" onClick={addRow}>
-        Add
+        {t('lessonThree.btnAdd')}
       </Button>
       <Button color="primary" onClick={removeRow}>
-        Delete
+        {t('lessonThree.btnDelete')}
       </Button>
     </>
   );

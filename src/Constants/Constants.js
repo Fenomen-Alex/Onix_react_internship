@@ -17,36 +17,46 @@ const vscText5 = 'кто и когда сделал то или иное изм�
 export const vscText = vscText1 + vscText2 + vscText3 + vscText4 + vscText5;
 
 // git.jsx
-export const gitTitle = 'GIT';
+const gitTitle = 'GIT';
 const gitText1 = ' позволяет разработчикам иметь множество совершенно независимых веток кода. ';
 const gitText2 = 'Создание, удаление и объединение этих веток происходит без ';
 const gitText3 = 'каких-либо проблем и больших затрат времени. Команды';
-export const gitText = gitText1 + gitText2 + gitText3;
-export const gitCommandsList = [
-  ' checkout,',
-  ' add,',
-  ' commit,',
-  ' pull,',
-  ' push . ',
-];
-export const gitCommand = 'Команда';
-export const commandCheckout = 'checkout ';
-export const commandCheckoutText = 'используется для создания, удаления и работы между ветками. Команда';
-export const commandAdd = ' add ';
-export const and = 'и';
-export const commandCommit = ' commit ';
-export const commandsText = 'позволяют добавлять файлы в репозиторий, '
+const gitText = gitText1 + gitText2 + gitText3;
+const gitCommandsList = ' checkout, add, commit, pull, push . ';
+const gitCommand = 'Команда ';
+const commandCheckout = 'checkout ';
+const commandCheckoutText = 'используется для создания, удаления и работы между ветками. Команда';
+const commandAdd = ' add ';
+const and = 'и';
+const commandCommit = ' commit ';
+const commandsText = 'позволяют добавлять файлы в репозиторий, '
   + 'а также вносить изменения в существующие файлы. Команда';
-export const commandPull = ' pull ';
-export const pullText = 'используется для объединения изменений, а';
-export const commandPush = 'push ';
-export const pushText = 'позволяет поместить изменения в главную '
+const commandPull = ' pull ';
+const pullText = 'используется для объединения изменений, а';
+const commandPush = 'push ';
+const pushText = 'позволяет поместить изменения в главную '
   + 'ветку удаленного хранилища связанного с рабочим каталогом.';
+export const gitContent = {
+  gitTitle,
+  gitCommandsList,
+  gitText,
+  gitCommand,
+  commandCheckout,
+  commandCheckoutText,
+  commandAdd,
+  and,
+  commandCommit,
+  commandsText,
+  commandPull,
+  pullText,
+  commandPush,
+  pushText
+};
 
 // node.jsx
-export const nodeTitle = 'Node';
-export const or = ' или ';
-export const nodejsTitle = 'Node.js';
+const nodeTitle = 'Node';
+const or = ' или ';
+const nodejsTitle = 'Node.js';
 const nodeText1 = ' — программная платформа, основанная на движке V8 (транслирующем JavaScript в машинный код), ';
 const nodeText2 = 'превращающая JavaScript из узкоспециализированного языка в язык общего назначения. ';
 const nodeText3 = 'Node.js добавляет возможность JavaScript взаимодействовать ';
@@ -58,24 +68,30 @@ const nodeText8 = 'и десктопные оконные приложения (
 const nodeText9 = 'и даже программировать микроконтроллеры (например, tessel, low.js и espruino). ';
 const nodeText10 = 'В основе Node.js лежит событийно-ориентированное и асинхронное (или реактивное) программирование ';
 const nodeText11 = 'с неблокирующим вводом/выводом';
-export const nodeText = nodeText1 + nodeText2 + nodeText3 + nodeText4 + nodeText5 + nodeText6
+const nodeText = nodeText1 + nodeText2 + nodeText3 + nodeText4 + nodeText5 + nodeText6
   + nodeText7 + nodeText8 + nodeText9 + nodeText10 + nodeText11;
+export const nodeContent = {
+  nodeTitle, or, nodejsTitle, nodeText
+};
 
 // npm.jsx
-export const npmTitle = 'Система управления пакетами';
+const npmTitle = 'Система управления пакетами';
 const npmText1 = ' — набор программного обеспечения, позволяющего управлять процессом установки, ';
 const npmText2 = 'удаления, настройки и обновления различных компонентов программного обеспечения.';
-export const npmText = npmText1 + npmText2;
-export const npmAbout = 'npm';
+const npmText = npmText1 + npmText2;
+const npmAbout = 'npm';
 const npmAboutText1 = ' — это пакетный менеджер node.js. С его помощью можно управлять модулями и зависимостями. ';
 const npmAboutText2 = 'Основные команды:';
-export const npmAboutText = npmAboutText1 + npmAboutText2;
-export const npmCommList = '"npm -h" — показывает список всех доступных команд пакетного менеджера.';
-export const npmCommUpdate = '"npm update npm -g" позволяет обновить версию';
+const npmAboutText = npmAboutText1 + npmAboutText2;
+const npmCommList = '"npm -h" — показывает список всех доступных команд пакетного менеджера.';
+const npmCommUpdate = '"npm update npm -g" позволяет обновить версию';
 const npmCommInstall1 = '"npm install package" — позволяет установить любой пакет по его имени. ';
 const npmCommInstall2 = 'Если при этом к команде добавить префикс "-g" ';
 const npmCommInstall3 = 'пакет будет установлен глобально на весь компьютер.';
-export const npmCommInstall = npmCommInstall1 + npmCommInstall2 + npmCommInstall3;
+const npmCommInstall = npmCommInstall1 + npmCommInstall2 + npmCommInstall3;
+export const npmContent = {
+  npmTitle, npmText, npmAbout, npmAboutText, npmCommList, npmCommUpdate, npmCommInstall
+};
 
 // html.jsx
 export const htmlTitle = 'HTML';
@@ -126,8 +142,9 @@ export const starWarsSequel = [
 ];
 
 // sixthlesson.js
-export const apiUrl = 'https://itunes.apple.com/search?term=starwars&limit=25&entity=song';
-export const tableHeader = ['Image', 'Track Title', 'Artist Name', 'Price'];
+export const apiUrl = 'https://itunes.apple.com/search?term=starwars&limit=25';
+export const tableHeader = ['Картинка', 'Название трека', 'Исполнитель', 'Цена'];
+export const sixthLessonTitle = 'Урок 6';
 
 // theTask.jsx
 
@@ -193,3 +210,28 @@ export const content = {
 // theme
 export const dark = 'dark';
 export const light = 'light';
+
+// lessonThree.js
+const lessonThreeHooksTitle = 'Урок 3 с использованием хуков';
+const btnYears = 'Год';
+const btnFilms = 'Фильм';
+const btnAdd = 'Добавить';
+const btnDelete = 'Удалить';
+export const lessonThreeContent = {
+  lessonThreeHooksTitle, btnAdd, btnDelete, btnFilms, btnYears
+};
+
+// secondLesson.js
+const secondLessonTitle = 'Урок 2';
+const secondLessonText = 'Дополнительные операции в консоли';
+export const secondLessonContent = { secondLessonTitle, secondLessonText };
+
+// btn
+export const switchThemeBtn = 'Переключить тему';
+
+// fourthLesson
+export const starWarsData = [
+  { id: 2, year: 2017, film: 'Звёздные войны. Эпизод VIII: Последние джедаи' },
+  { id: 1, year: 2015, film: 'Авёздные войны. Эпизод VII: Пробуждение Силы' },
+  { id: 3, year: 2019, film: 'Звёздные войны. Эпизод IX: Скайуокер. Восход' },
+];

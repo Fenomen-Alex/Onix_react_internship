@@ -61,7 +61,7 @@ header {
 }
 
 .author {
-    background-color: rgba(0, 60, 130, 0.91);
+    background-color: rgba(0, 35, 75, 0.91);
     height: 100px;
     border-radius: 15px;
     box-shadow: 0 0 5px rgba(0, 60, 130, 0.91);
@@ -193,4 +193,8 @@ h2 {
 .langLogo {
     width: 25px;
     height: 25px;
+}
+.themeSwitcher {
+    max-height: 25px;
+    max-width: 25px;
 }

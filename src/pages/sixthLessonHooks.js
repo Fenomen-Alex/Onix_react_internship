@@ -127,6 +127,7 @@ const LessonSixHooks = () => {
               {
                 trackId,
                 artworkUrl60,
+                collectionCensoredName,
                 trackName,
                 artistName,
                 trackPrice,
@@ -152,7 +153,7 @@ const LessonSixHooks = () => {
                 <td>
                   <img src={artworkUrl60} alt="img" />
                 </td>
-                <td>{trackName}</td>
+                <td>{trackName || collectionCensoredName}</td>
                 <td>{artistName}</td>
                 <td>
                   {trackPrice}

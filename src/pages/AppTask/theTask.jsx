@@ -1,20 +1,19 @@
 import React from 'react';
-import {
-  task
-} from '../../Constants/Constants';
+import { useTranslation } from 'react-i18next';
 
 const TheTask = () => {
+  const { t } = useTranslation('translations');
   return (
     <>
       <h2>
-        <b>{task.entryTask}</b>
+        <b>{t('task.entryTask')}</b>
       </h2>
-      <b>{task.theme}</b>
-      <span>{task.themeItems}</span>
+      <b>{t('task.theme')}</b>
+      <span>{t('task.themeItems')}</span>
       <br />
-      <b>{task.aim}</b>
+      <b>{t('task.aim')}</b>
       <span>
-        {task.aimItem}
+        {t('task.aimItem')}
       </span>
       <br />
     </>

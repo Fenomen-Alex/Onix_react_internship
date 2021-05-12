@@ -1,6 +1,7 @@
 import React from 'react';
 
 import '../assets/css/main.css';
+import { useTranslation } from 'react-i18next';
 
 const varStr = 'Some string';
 const varNum = 123;
@@ -31,12 +32,13 @@ const Conspect = () => {
     console.log(`${varNum} больше, чем ${varStr}`);
   }
 
+  const { t } = useTranslation('translations');
+
   return (
     <div className="secondLesson">
-      <h1>Lesson 2</h1>
+      <h1>{t('secondLesson.secondLessonTitle')}</h1>
       <p>
-        {/* eslint-disable-next-line react/no-unescaped-entities */}
-        Go to console to look what's happening))
+        {t('secondLesson.secondLessonText')}
         <br />
         {/* eslint-disable-next-line react/no-unescaped-entities */}
         let varStr = 'Some string';

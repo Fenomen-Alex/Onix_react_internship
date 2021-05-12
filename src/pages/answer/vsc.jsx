@@ -1,12 +1,13 @@
 import React from 'react';
 // eslint-disable-next-line import/named
-import { vscText, vscTitleRu } from '../../Constants/Constants';
+import { useTranslation } from 'react-i18next';
 
 const VCS = () => {
+  const { t } = useTranslation('translations');
   return (
     <div className="vcs">
-      <b>{vscTitleRu}</b>
-      {vscText}
+      <b>{t('answer.vsc.vscTitle')}</b>
+      {t('answer.vsc.vscText')}
     </div>
   );
 };

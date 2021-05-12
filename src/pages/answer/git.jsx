@@ -1,47 +1,39 @@
 import React from 'react';
+import { useTranslation } from 'react-i18next';
 import git from '../../assets/images/git.png';
-import {
-  and,
-  commandAdd,
-  commandCheckout,
-  commandCheckoutText, commandCommit, commandPull, commandPush, commandsText,
-  gitCommand,
-  gitCommandsList,
-  gitText,
-  gitTitle, pullText, pushText
-} from '../../Constants/Constants';
 
 const GIT = () => {
+  const { t } = useTranslation('translations');
   return (
     <div className="git">
       <img className="img-git" src={git} alt="git" />
-      <strong>{gitTitle}</strong>
-      {gitText}
+      <strong>{t('answer.git.gitTitle')}</strong>
+      {t('answer.git.gitText')}
       <em>
-        <span>{gitCommandsList}</span>
+        <span>{t('answer.git.gitCommandsList')}</span>
       </em>
       <span>
-        {gitCommand}
+        {t('answer.git.gitCommand')}
         <strong>
-          <em>{commandCheckout}</em>
+          <em>{t('answer.git.commandCheckout')}</em>
         </strong>
-        {commandCheckoutText}
+        {t('answer.git.commandCheckoutText')}
         <strong>
-          <em>{commandAdd}</em>
+          <em>{t('answer.git.commandAdd')}</em>
         </strong>
-        {and}
+        {t('answer.git.and')}
         <strong>
-          <em>{commandCommit}</em>
+          <em>{t('answer.git.commandCommit')}</em>
         </strong>
-        {commandsText}
+        {t('answer.git.commandsText')}
         <strong>
-          <em>{commandPull}</em>
+          <em>{t('answer.git.commandPull')}</em>
         </strong>
-        {pullText}
+        {t('answer.git.pullText')}
         <strong>
-          <em>{commandPush}</em>
+          <em>{t('answer.git.commandPush')}</em>
         </strong>
-        {pushText}
+        {t('answer.git.pushText')}
       </span>
     </div>
   );

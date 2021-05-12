@@ -10,7 +10,7 @@ import Conspect from './pages/secondLesson';
 // import LessonSix from './pages/sixthLesson';
 import NineLessonText from './pages/NineLessonText';
 import AppTask from './pages/AppTask/AppTask';
-import Appfooter from './components/footer';
+import AppFooter from './components/footer';
 // eslint-disable-next-line import/no-cycle
 import LessonThreeHooks from './pages/thirdLessonHooks';
 import LessonFourHooks from './pages/fourthLessonHooks';
@@ -65,7 +65,7 @@ class App extends Component {
                 </Route>
               </Switch>
             </Router>
-            <Appfooter />
+            <AppFooter />
           </div>
 
         </ThemeContext.Provider>

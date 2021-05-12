@@ -1,55 +1,56 @@
 import React from 'react';
 // eslint-disable-next-line import/named
-import { content } from '../../Constants/Constants';
+import { useTranslation } from 'react-i18next';
 
 const Content = () => {
+  const { t } = useTranslation('translations');
   return (
     <>
-      <b>{content.discuss}</b>
+      <b>{t('content.discuss')}</b>
       <ol>
         <li>
-          <span>{content.discussVCM}</span>
+          <span>{t('content.discussVCM')}</span>
         </li>
         <li>
-          <span>{content.discussGit}</span>
+          <span>{t('content.discussGit')}</span>
           <ol>
             <li>
-              <span>{content.gitCommands}</span>
+              <span>{t('content.gitCommands')}</span>
             </li>
             <li>
-              <span>{content.gitBasics}</span>
+              <span>{t('content.gitBasics')}</span>
             </li>
           </ol>
         </li>
         <li>
-          <span>{content.discussNode}</span>
+          <span>{t('content.discussNode')}</span>
         </li>
         <li>
-          <span>{content.discussNPM}</span>
+          <span>{t('content.discussNPM')}</span>
         </li>
         <li>
-          <span>{content.discussHtml}</span>
-          <a href={content.w3cLink}>
-            <span>{content.w3cLinkText}</span>
+          <span>{t('content.discussHtml')}</span>
+          <a href={t('content.w3cLink')}>
+            <span>{t('content.w3cLinkText')}</span>
           </a>
         </li>
         <li>
-          <span>{content.discussCss}</span>
+          <span>{t('content.discussCss')}</span>
         </li>
       </ol>
       <br />
-      <b>{content.contentTask}</b>
+      <b>{t('content.contentTask')}</b>
       <span> </span>
       <ol>
         <li>
-          <span>{content.firstTask}</span>
-          <a href={content.gitHubLink}>
-            <span>{content.gitHubLinkText}</span>
+          <span>{t('content.firstTask')}</span>
+          <a href={t('content.gitHubLink')}>
+            <span>{t('content.gitHubLinkText')}</span>
           </a>
-          <span>{content.firstTaskContinue}</span>
+          <span>{t('content.firstTaskContinue')}</span>
         </li>
         <li>
-          <span>{content.secondTask}</span>
+          <span>{t('content.secondTask')}</span>
         </li>
       </ol>
     </>

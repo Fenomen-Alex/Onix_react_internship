@@ -8,6 +8,7 @@ import {
 
 import '../assets/css/main.css';
 import ThemeToggler from './ThemeToggler';
+import { LangSwitcherBtn } from './LangSwitcherBtn';
 
 const NavComp = (props) => {
   return (
@@ -38,8 +39,8 @@ const NavComp = (props) => {
         </Nav>
         {/* eslint-disable-next-line react/jsx-props-no-spreading */}
         <ThemeToggler {...props} />
+        <LangSwitcherBtn />
       </Navbar>
-
     </div>
   );
 };

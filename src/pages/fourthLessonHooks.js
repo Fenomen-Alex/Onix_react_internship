@@ -1,18 +1,16 @@
 import React, { useState } from 'react';
 
 import { Button, Table } from 'reactstrap';
-
-const starWarsData = [
-  { id: 2, year: 2017, film: 'Звёздные войны. Эпизод VIII: Последние джедаи' },
-  { id: 1, year: 2015, film: 'Авёздные войны. Эпизод VII: Пробуждение Силы' },
-  { id: 3, year: 2019, film: 'Звёздные войны. Эпизод IX: Скайуокер. Восход' },
-];
+import { useTranslation } from 'react-i18next';
+import { starWarsData } from '../Constants/Constants';
 
 const asc = 'asc';
 const desc = 'desc';
 
 const LessonFourHooks = () => {
-  const [data, setData] = useState(starWarsData);
+  const { t } = useTranslation('translations');
+
+  const [data, setData] = useState([...starWarsData]);
   
   const [filmDirection, setFilmDirection] = useState(asc);
 
@@ -43,11 +41,11 @@ const LessonFourHooks = () => {
           min = j;
         }
       }
-      const t = array[min];
+      const s = array[min];
       // eslint-disable-next-line no-param-reassign
       array[min] = array[i];
       // eslint-disable-next-line no-param-reassign
-      array[i] = t;
+      array[i] = s;
     }
     setFilmDirection(filmDirection === asc ? desc : asc);
     return array;
@@ -98,15 +96,15 @@ const LessonFourHooks = () => {
           <tr>
             <th>
               <Button color="secondary" onClick={() => sortByClick()}>
-                Years
+                {t('lessonThree.btnYears')}
               </Button>
             </th>
             <th>
               <Button color="secondary" onClick={() => sortByClick(true)}>
-                Films
+                {t('lessonThree.btnFilms')}
               </Button>
             </th>
-            <th>Delete</th>
+            <th>{t('lessonThree.btnAdd')}</th>
           </tr>
         </thead>
         <tbody>
@@ -134,10 +132,10 @@ const LessonFourHooks = () => {
         onChange={(e) => setFilmInputText(e.target.value)}
       />
       <Button color="primary" onClick={addByClick}>
-        Add
+        {t('lessonThree.btnAdd')}
       </Button>
       <Button color="primary" onClick={removeLastInArray}>
-        Delete
+        {t('lessonThree.btnDelete')}
       </Button>
     </div>
   );
