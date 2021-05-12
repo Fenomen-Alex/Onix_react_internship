@@ -1,9 +1,12 @@
 /* eslint-disable no-console,no-undef */
 import React, { useEffect, useState } from 'react';
 import { Table } from 'reactstrap';
+import { useTranslation } from 'react-i18next';
 import { apiUrl, tableHeader } from '../Constants/Constants';
 
 const LessonSixHooks = () => {
+  const { t } = useTranslation('translations');
+
   const [tracks, setTracks] = useState([]);
 
   const dragStartHandler = (e, trackId) => {
@@ -13,7 +16,7 @@ const LessonSixHooks = () => {
     }));
     setTracks(newTracks);
   };
-  
+
   const dragEndHandler = (e) => {
     e.preventDefault();
     const newTracks = tracks.map((item) => ({
@@ -22,7 +25,7 @@ const LessonSixHooks = () => {
     }));
     setTracks(newTracks);
   };
-  
+
   const dragOverHandler = (e, trackId) => {
     e.preventDefault();
     const newTracks = tracks.map((item) => ({
@@ -31,13 +34,13 @@ const LessonSixHooks = () => {
     }));
     setTracks(newTracks);
   };
-  
+
   const swap = (array, i, j) => {
     // eslint-disable-next-line no-param-reassign
     [array[i], array[j]] = [array[j], array[i]];
     return array;
   };
-  
+
   const dropHandler = (e, trackToSwap) => {
     e.preventDefault();
     const activeTrack = tracks.findIndex((x) => x.isActive);
@@ -49,7 +52,7 @@ const LessonSixHooks = () => {
     }));
     setTracks(newTracks);
   };
-  
+
   const onClick = (trackId) => {
     // eslint-disable-next-line react/destructuring-assignment,react/no-access-state-in-setstate
     const newTracks = tracks.map((item) => ({
@@ -58,7 +61,7 @@ const LessonSixHooks = () => {
     }));
     setTracks(newTracks);
   };
-  
+
   const handleKeyDown = (e) => {
     const { keyCode } = e;
     const currentIndex = tracks.findIndex((x) => x.isActive) || 0;
@@ -112,7 +115,7 @@ const LessonSixHooks = () => {
 
   return (
     <>
-      <h1>Lesson 6</h1>
+      <h1>{t('sixthLesson.sixthLessonTitle')}</h1>
       <Table className="myAPITable">
         <thead>
           <tr>
@@ -137,7 +140,7 @@ const LessonSixHooks = () => {
               index
             ) => (
               <tr
-                /* eslint-disable-next-line react/no-array-index-key */
+              /* eslint-disable-next-line react/no-array-index-key */
                 key={index}
                 className={`${isOver ? 'over' : ''} ${
                   isActive ? 'selected' : ''

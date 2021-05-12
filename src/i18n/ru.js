@@ -12,7 +12,7 @@ import {
   cssText,
   cssTitle, footerContent,
   gitContent, htmlText, htmlTitle, lessonThreeContent, nodeContent, npmContent, secondLessonContent, sixthLessonTitle,
-  solutionTitle, switchThemeBtn,
+  solutionTitle, switchThemeBtn, tableHeader,
   task,
   vscText,
   vscTitleRu
@@ -23,7 +23,10 @@ export const ru = {
     footer: { ...footerContent },
     secondLesson: { ...secondLessonContent },
     lessonThree: { ...lessonThreeContent },
-    sixthLessonTitle,
+    sixthLesson: {
+      sixthLessonTitle,
+      tableHeader: [...tableHeader]
+    },
     switchTheme: switchThemeBtn,
     ninthLesson: {
       title: 'Компонент высшего порядка',

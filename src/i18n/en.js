@@ -12,7 +12,7 @@ import {
   taskEN,
   vscTextEN,
   vscTitleEN,
-  secondLessonContentEN, lessonThreeContentEN, switchThemeBtnEN, sixthLessonTitleEN
+  secondLessonContentEN, lessonThreeContentEN, switchThemeBtnEN, sixthLessonTitleEN, tableHeaderEN
 } from '../Constants/ConstantsEN';
 
 export const en = {
@@ -21,7 +21,10 @@ export const en = {
     secondLesson: { ...secondLessonContentEN },
     lessonThree: { ...lessonThreeContentEN },
     switchTheme: switchThemeBtnEN,
-    sixthLessonTitle: sixthLessonTitleEN,
+    sixthLesson: {
+      sixthLessonTitle: sixthLessonTitleEN,
+      tableHeader: [...tableHeaderEN]
+    },
     ninthLesson: {
       title: 'Higher-Order Component, HOC ',
       text1: 'A higher-order component (HOC) is an advanced technique in React for reusing component logic. '
