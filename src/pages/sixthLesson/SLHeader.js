@@ -30,7 +30,7 @@ const SLHeader = (props) => {
     <div>
       <h1>{t('sixthLesson.sixthLessonTitle')}</h1>
       <Button onClick={() => onRefresh()}>
-        {isFetching ? 'Loading' : 'Refresh'}
+        {isFetching ? <i className="fa fa-spinner fa-spin" /> : 'Refresh'}
       </Button>
     </div>
   );
