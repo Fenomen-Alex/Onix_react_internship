@@ -198,3 +198,6 @@ h2 {
     max-height: 25px;
     max-width: 25px;
 }
+.dark .page-link {
+    background-color: #383B41;
+}
