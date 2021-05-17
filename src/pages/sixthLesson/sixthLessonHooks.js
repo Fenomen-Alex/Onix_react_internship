@@ -1,3 +1,5 @@
+// noinspection JSUnusedGlobalSymbols
+
 /* eslint-disable no-console,no-undef,
 react/prop-types,no-shadow,no-plusplus,react/no-array-index-key,react/jsx-indent-props */
 import React, { useEffect } from 'react';
