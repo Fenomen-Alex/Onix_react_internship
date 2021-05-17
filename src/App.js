@@ -14,7 +14,7 @@ import AppFooter from './components/footer';
 // eslint-disable-next-line import/no-cycle
 import LessonThreeHooks from './pages/thirdLessonHooks';
 import LessonFourHooks from './pages/fourthLessonHooks';
-import LessonSixHooks from './pages/sixthLessonHooks';
+import LessonSixHooks from './pages/sixthLesson/sixthLessonHooks';
 import { dark, light } from './Constants/Constants';
 import { ThemeContext } from './context/themeContext';
 import './i18n';
