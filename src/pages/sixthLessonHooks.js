@@ -50,12 +50,17 @@ const LessonSixHooks = (props) => {
   for (let i = 1; i <= pagesCount; i++) {
     pages.push(i);
   }
+
+  const dataToShow = data.slice(
+    currentPage * pageSize,
+    (currentPage + 1) * pageSize
+  );
   
   // const [tracks, setTracks] = useState([]);
   const dragStartHandler = (e, trackId) => {
     const newTracks = data.map((item) => ({
       ...item,
-      isActive: item.trackId || item.collectionId === trackId,
+      isActive: (item.trackId || item.collectionId) === trackId,
     }));
     getData(newTracks);
   };
@@ -73,7 +78,7 @@ const LessonSixHooks = (props) => {
     e.preventDefault();
     const newTracks = data.map((item) => ({
       ...item,
-      isOver: item.trackId || item.collectionId === trackId,
+      isOver: (item.trackId || item.collectionId) === trackId,
     }));
     getData(newTracks);
   };
@@ -86,7 +91,7 @@ const LessonSixHooks = (props) => {
 
   const dropHandler = (e, trackToSwap) => {
     e.preventDefault();
-    const activeTrack = data.findIndex((x) => x.isActive);
+    const activeTrack = data.findIndex((x) => x.isActive) + (currentPage * pageSize);
     const swapped = swap([...data], activeTrack, trackToSwap);
     const newTracks = swapped.map((item) => ({
       ...item,
@@ -245,10 +250,7 @@ const LessonSixHooks = (props) => {
           </tr>
         </thead>
         <tbody>
-          {data.slice(
-            currentPage * pageSize,
-            (currentPage + 1) * pageSize
-          ).map(
+          {dataToShow.map(
             (
               {
                 trackId,
@@ -274,7 +276,7 @@ const LessonSixHooks = (props) => {
                 onDragLeave={(e) => dragEndHandler(e)}
                 onDragEnd={(e) => dragEndHandler(e, trackId || collectionId)}
                 onDragOver={(e) => dragOverHandler(e, trackId || collectionId)}
-                onDrop={(e) => dropHandler(e, index)}
+                onDrop={(e) => dropHandler(e, (index + (currentPage * pageSize)))}
                 onClick={() => onClick(trackId || collectionId)}
               >
                 <td>
