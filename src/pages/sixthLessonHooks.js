@@ -1,38 +1,81 @@
-/* eslint-disable no-console,no-undef */
-import React, { useEffect, useState } from 'react';
-import { Table } from 'reactstrap';
+/* eslint-disable no-console,no-undef,react/prop-types,no-shadow,no-plusplus,react/no-array-index-key */
+import React, { useEffect } from 'react';
+import {
+  Button, Pagination, PaginationItem, PaginationLink, Table 
+} from 'reactstrap';
 import { useTranslation } from 'react-i18next';
+import { connect } from 'react-redux';
 import { apiUrl } from '../Constants/Constants';
+import {
+  getData, setCurrentPage, setTotalCount, toggleIsFetching
+} from '../store/actions';
 
-const LessonSixHooks = () => {
+const mapStateToProps = (state) => {
+  return {
+    data: state.data.data,
+    isFetching: state.data.isFetching,
+    totalCount: state.data.totalCount,
+    pageSize: state.data.pageSize,
+    currentPage: state.data.currentPage
+  };
+};
+
+// const mapDispatchToProps = (dispatch) => {
+//   return {
+//     getAPIData: (data) => {
+//       dispatch(getData(data));
+//     },
+//     setAPICurrentPage: (currentPage) => {
+//       dispatch(setCurrentPage(currentPage));
+//     },
+//     setAPITotalCount: (totalCount) => {
+//       dispatch(setTotalCount(totalCount));
+//     },
+//     toggleAPIIsFetching: (isFetching) => {
+//       dispatch(toggleIsFetching(isFetching));
+//     }
+//   };
+// };
+
+const LessonSixHooks = (props) => {
   const { t } = useTranslation('translations');
 
-  const [tracks, setTracks] = useState([]);
-
+  const {
+    // eslint-disable-next-line no-unused-vars,react/prop-types
+    data, isFetching, currentPage, totalCount, getData, setCurrentPage, setTotalCount, toggleIsFetching, pageSize
+  } = props;
+  
+  const pagesCount = Math.ceil(totalCount / pageSize);
+  const pages = [];
+  for (let i = 1; i <= pagesCount; i++) {
+    pages.push(i);
+  }
+  
+  // const [tracks, setTracks] = useState([]);
   const dragStartHandler = (e, trackId) => {
-    const newTracks = tracks.map((item) => ({
+    const newTracks = data.map((item) => ({
       ...item,
-      isActive: item.trackId === trackId,
+      isActive: item.trackId || item.collectionId === trackId,
     }));
-    setTracks(newTracks);
+    getData(newTracks);
   };
 
   const dragEndHandler = (e) => {
     e.preventDefault();
-    const newTracks = tracks.map((item) => ({
+    const newTracks = data.map((item) => ({
       ...item,
       isOver: false,
     }));
-    setTracks(newTracks);
+    getData(newTracks);
   };
 
   const dragOverHandler = (e, trackId) => {
     e.preventDefault();
-    const newTracks = tracks.map((item) => ({
+    const newTracks = data.map((item) => ({
       ...item,
-      isOver: item.trackId === trackId,
+      isOver: item.trackId || item.collectionId === trackId,
     }));
-    setTracks(newTracks);
+    getData(newTracks);
   };
 
   const swap = (array, i, j) => {
@@ -43,28 +86,28 @@ const LessonSixHooks = () => {
 
   const dropHandler = (e, trackToSwap) => {
     e.preventDefault();
-    const activeTrack = tracks.findIndex((x) => x.isActive);
-    const swapped = swap([...tracks], activeTrack, trackToSwap);
+    const activeTrack = data.findIndex((x) => x.isActive);
+    const swapped = swap([...data], activeTrack, trackToSwap);
     const newTracks = swapped.map((item) => ({
       ...item,
       isOver: false,
       isActive: false,
     }));
-    setTracks(newTracks);
+    getData(newTracks);
   };
 
   const onClick = (trackId) => {
     // eslint-disable-next-line react/destructuring-assignment,react/no-access-state-in-setstate
-    const newTracks = tracks.map((item) => ({
+    const newTracks = data.map((item) => ({
       ...item,
-      isActive: item.trackId === trackId && !item.isActive,
+      isActive: (item.trackId || item.collectionId) === trackId && !item.isActive,
     }));
-    setTracks(newTracks);
+    getData(newTracks);
   };
 
   const handleKeyDown = (e) => {
     const { keyCode } = e;
-    const currentIndex = tracks.findIndex((x) => x.isActive) || 0;
+    const currentIndex = data.findIndex((item) => item.isActive) || 0;
     let direction = 0;
     switch (keyCode) {
       case 38:
@@ -77,20 +120,54 @@ const LessonSixHooks = () => {
         break;
     }
     const nextIndex = currentIndex + direction;
-    if (tracks[nextIndex]) {
-      const newTracks = tracks.map((item, index) => ({
+    if (data[nextIndex]) {
+      const newTracks = data.map((item, index) => ({
         ...item,
         isActive: index === nextIndex,
       }));
-      setTracks(newTracks);
+      getData(newTracks);
     }
   };
 
   useEffect(() => {
+    toggleIsFetching(true);
     fetch(apiUrl)
       .then((response) => response.json())
       .then(
-        (res) => setTracks(
+        (res) => {
+          getData(
+            res.results.map((item) => ({
+              ...item,
+              isActive: false,
+              isOver: false,
+            })),
+          );
+          toggleIsFetching(false);
+          setTotalCount(res.resultCount);
+        },
+        (error) => {
+          console.log(`Error : ${error}`);
+        }
+      );
+
+    // document.addEventListener('keyup', handleKeyDown);
+    // return () => document.removeEventListener('keyup', handleKeyDown);
+  }, []);
+
+  const onLoad = () => {
+    console.log('Image loaded');
+  };
+
+  const onError = () => {
+    console.log('Image not loaded');
+  };
+  
+  const onRefresh = async () => {
+    await toggleIsFetching(true);
+    await fetch(apiUrl)
+      .then((response) => response.json())
+      .then(
+        (res) => getData(
           res.results.map((item) => ({
             ...item,
             isActive: false,
@@ -101,21 +178,64 @@ const LessonSixHooks = () => {
           console.log(`Error : ${error}`);
         }
       );
-    document.addEventListener('keyup', handleKeyDown);
-    return () => document.removeEventListener('keyup', handleKeyDown);
-  });
-
-  const onLoad = () => {
-    console.log('Image loaded');
+    await toggleIsFetching(false);
   };
+  useEffect(() => {
+    document.addEventListener('keyup', handleKeyDown);
 
-  const onError = () => {
-    console.log('Image not loaded');
+    return () => {
+      document.removeEventListener('keyup', handleKeyDown);
+    };
+  });
+  // document.addEventListener('keyup', handleKeyDown);
+  const handleClick = (e, index) => {
+    e.preventDefault();
+    setCurrentPage(index);
   };
 
   return (
     <>
-      <h1>{t('sixthLesson.sixthLessonTitle')}</h1>
+      <div>
+        <h1>{t('sixthLesson.sixthLessonTitle')}</h1>
+        <Button onClick={() => onRefresh()}>
+          {isFetching ? 'Loading' : 'Refresh'}
+        </Button>
+      </div>
+      <div className="pagination-wrapper">
+
+        <Pagination aria-label="Page navigation example">
+
+          <PaginationItem disabled={currentPage <= 0}>
+
+            <PaginationLink
+              onClick={(e) => handleClick(e, currentPage - 1)}
+              previous
+              href="#"
+            />
+
+          </PaginationItem>
+
+          {[...Array(pagesCount)].map((page, i) => (
+            <PaginationItem active={i === currentPage} key={i}>
+              <PaginationLink onClick={(e) => handleClick(e, i)} href="#">
+                {i + 1}
+              </PaginationLink>
+            </PaginationItem>
+          ))}
+
+          <PaginationItem disabled={currentPage >= pagesCount - 1}>
+
+            <PaginationLink
+              onClick={(e) => handleClick(e, currentPage + 1)}
+              next
+              href="#"
+            />
+
+          </PaginationItem>
+
+        </Pagination>
+
+      </div>
       <Table className="myAPITable">
         <thead>
           <tr>
@@ -125,12 +245,16 @@ const LessonSixHooks = () => {
           </tr>
         </thead>
         <tbody>
-          {tracks.map(
+          {data.slice(
+            currentPage * pageSize,
+            (currentPage + 1) * pageSize
+          ).map(
             (
               {
                 trackId,
                 artworkUrl60,
                 collectionCensoredName,
+                collectionId,
                 trackName,
                 artistName,
                 trackPrice,
@@ -146,12 +270,12 @@ const LessonSixHooks = () => {
                   isActive ? 'selected' : ''
                 }`}
                 draggable
-                onDragStart={(e) => dragStartHandler(e, trackId)}
+                onDragStart={(e) => dragStartHandler(e, trackId || collectionId)}
                 onDragLeave={(e) => dragEndHandler(e)}
-                onDragEnd={(e) => dragEndHandler(e, trackId)}
-                onDragOver={(e) => dragOverHandler(e, trackId)}
+                onDragEnd={(e) => dragEndHandler(e, trackId || collectionId)}
+                onDragOver={(e) => dragOverHandler(e, trackId || collectionId)}
                 onDrop={(e) => dropHandler(e, index)}
-                onClick={() => onClick(trackId)}
+                onClick={() => onClick(trackId || collectionId)}
               >
                 <td>
                   <img src={artworkUrl60} alt="img" />
@@ -177,4 +301,6 @@ const LessonSixHooks = () => {
   );
 };
 
-export default LessonSixHooks;
+export default connect(mapStateToProps, {
+  getData, setCurrentPage, setTotalCount, toggleIsFetching
+})(LessonSixHooks);

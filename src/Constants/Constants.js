@@ -142,7 +142,7 @@ export const starWarsSequel = [
 ];
 
 // sixthlesson.js
-export const apiUrl = 'https://itunes.apple.com/search?term=starwars&limit=25';
+export const apiUrl = 'https://itunes.apple.com/search?term=starwars&limit=200';
 export const tableHeader = ['Картинка', 'Название трека', 'Исполнитель', 'Цена'];
 export const sixthLessonTitle = 'Урок 6';
 
