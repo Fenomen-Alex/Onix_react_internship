@@ -1,6 +1,5 @@
 import React from 'react';
-// eslint-disable-next-line import/no-cycle
-import { ThemeContext } from '../context/themeContext';
+import ThemeContext from '../context/themeContext';
 
 const StyledTheme = (WrappedComponent) => {
   return class extends React.Component {
