@@ -1,52 +1,37 @@
-// noinspection JSUnusedGlobalSymbols
-
-/* eslint-disable no-console,no-undef,
-react/prop-types,no-shadow,no-plusplus,react/no-array-index-key,react/jsx-indent-props */
+/* eslint-disable no-console */
 import React, { useEffect } from 'react';
 import { Table } from 'reactstrap';
 import { useTranslation } from 'react-i18next';
 import { connect } from 'react-redux';
-import { apiUrl } from '../../Constants/Constants';
+import PropTypes from 'prop-types';
+import { apiUrl } from '../../constants/constants';
 import {
-  getData, setCurrentPage, setTotalCount, toggleIsFetching
+  getDataAC, setCurrentPageAC, setTotalCountAC, toggleIsFetchingAC
 } from '../../store/actions';
 import SLHeader from './SLHeader';
 import SlPagination from './SLPagination';
 import SlTableHeader from './SLTableHeader';
 import SlTable from './SLTable';
 
-const mapStateToProps = (state) => {
-  return {
-    data: state.data.data,
-    isFetching: state.data.isFetching,
-    totalCount: state.data.totalCount,
-    pageSize: state.data.pageSize,
-    currentPage: state.data.currentPage
-  };
-};
+const mapStateToProps = (state) => ({
+  data: state.data.data,
+  isFetching: state.data.isFetching,
+  totalCount: state.data.totalCount,
+  pageSize: state.data.pageSize,
+  currentPage: state.data.currentPage
+});
 
-const mapDispatchToProps = (dispatch) => {
-  return {
-    getData: (data) => {
-      dispatch(getData(data));
-    },
-    setCurrentPage: (currentPage) => {
-      dispatch(setCurrentPage(currentPage));
-    },
-    setTotalCount: (totalCount) => {
-      dispatch(setTotalCount(totalCount));
-    },
-    toggleIsFetching: (isFetching) => {
-      dispatch(toggleIsFetching(isFetching));
-    }
-  };
-};
+const mapDispatchToProps = ({
+  getData: getDataAC,
+  setCurrentPage: setCurrentPageAC,
+  setTotalCount: setTotalCountAC,
+  toggleIsFetching: toggleIsFetchingAC
+});
 
 const LessonSixHooks = (props) => {
   const { t } = useTranslation('translations');
 
   const {
-    // eslint-disable-next-line no-unused-vars,react/prop-types
     data, isFetching, currentPage, totalCount, getData, setCurrentPage, setTotalCount, toggleIsFetching, pageSize
   } = props;
 
@@ -94,9 +79,6 @@ const LessonSixHooks = (props) => {
           console.log(`Error : ${error}`);
         }
       );
-
-    // document.addEventListener('keyup', handleKeyDown);
-    // return () => document.removeEventListener('keyup', handleKeyDown);
   }, []);
 
   const onLoad = () => {
@@ -114,7 +96,6 @@ const LessonSixHooks = (props) => {
       document.removeEventListener('keyup', handleKeyDown);
     };
   });
-  // document.addEventListener('keyup', handleKeyDown);
 
   return (
     <>
@@ -124,10 +105,10 @@ const LessonSixHooks = (props) => {
         getData={getData}
       />
       <SlPagination
-          currentPage={currentPage}
-          totalCount={totalCount}
-          pageSize={pageSize}
-          setCurrentPage={setCurrentPage}
+        currentPage={currentPage}
+        totalCount={totalCount}
+        pageSize={pageSize}
+        setCurrentPage={setCurrentPage}
       />
       <Table className="myAPITable">
         <SlTableHeader t={t} />
@@ -146,6 +127,30 @@ const LessonSixHooks = (props) => {
       />
     </>
   );
+};
+
+LessonSixHooks.defaultProps = {
+  currentPage: 0,
+  data: [{}],
+  pageSize: 10,
+  getData: getDataAC,
+  isFetching: false,
+  totalCount: 0,
+  setCurrentPage: setCurrentPageAC,
+  setTotalCount: setTotalCountAC,
+  toggleIsFetching: toggleIsFetchingAC
+};
+
+LessonSixHooks.propTypes = {
+  currentPage: PropTypes.number,
+  data: PropTypes.arrayOf(PropTypes.object),
+  pageSize: PropTypes.number,
+  getData: PropTypes.func,
+  isFetching: PropTypes.bool,
+  totalCount: PropTypes.number,
+  setCurrentPage: PropTypes.func,
+  setTotalCount: PropTypes.func,
+  toggleIsFetching: PropTypes.func
 };
 
 export default connect(mapStateToProps, mapDispatchToProps)(LessonSixHooks);

@@ -13,7 +13,7 @@ import {
   vscTextEN,
   vscTitleEN,
   secondLessonContentEN, lessonThreeContentEN, switchThemeBtnEN, sixthLessonTitleEN, tableHeaderEN
-} from '../Constants/ConstantsEN';
+} from '../constants/constantsEN';
 
 export const en = {
   translations: {

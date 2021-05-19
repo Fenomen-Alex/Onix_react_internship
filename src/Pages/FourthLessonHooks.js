@@ -1,8 +1,9 @@
+/* eslint-disable no-param-reassign */
 import React, { useState } from 'react';
 
 import { Button, Table } from 'reactstrap';
 import { useTranslation } from 'react-i18next';
-import { starWarsData } from '../Constants/Constants';
+import { starWarsData } from '../constants/constants';
 
 const asc = 'asc';
 const desc = 'desc';
@@ -28,7 +29,6 @@ const LessonFourHooks = () => {
     return result;
   };
 
-  // eslint-disable-next-line no-unused-vars
   const sortByFilm = (array) => {
     const n = array.length;
     for (let i = 0; i < n - 1; i + 1) {
@@ -42,16 +42,13 @@ const LessonFourHooks = () => {
         }
       }
       const s = array[min];
-      // eslint-disable-next-line no-param-reassign
       array[min] = array[i];
-      // eslint-disable-next-line no-param-reassign
       array[i] = s;
     }
     setFilmDirection(filmDirection === asc ? desc : asc);
     return array;
   };
 
-  // eslint-disable-next-line no-shadow
   const sortByClick = (sortFilm = false) => {
     if (sortFilm) {
       setData(data.sort(sortByFilm));
@@ -72,14 +69,6 @@ const LessonFourHooks = () => {
     setFilmInputText('');
     return data;
   };
-
-  // const handleInputChange = (e, field) => {
-  //   if (field === 'filmInputYear') {
-  //     setFilmInputYear(e.target.value);
-  //   } else if (field === 'filmInputText') {
-  //     setFilmInputText(e.target.value);
-  //   }
-  // };
 
   const removeById = (id) => {
     setData(data.filter((item) => item.id !== id));
@@ -112,9 +101,7 @@ const LessonFourHooks = () => {
             <tr key={item.id}>
               <td>{item.year}</td>
               <td>{item.film}</td>
-              {/* eslint-disable-next-line max-len */}
-              {/* eslint-disable-next-line jsx-a11y/click-events-have-key-events,jsx-a11y/no-noninteractive-element-interactions */}
-              <td onClick={() => removeById(item.id)}>-</td>
+              <Button color="secondary" onClick={() => removeById(item.id)}>-</Button>
             </tr>
           ))}
         </tbody>

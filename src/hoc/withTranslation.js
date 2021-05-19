@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import getTranslation from '../../services/getTranslation';
+import getTranslation from '../services/getTranslation';
 
 const withTranslation = (componentName) => (WrappedComponent) => {
   return class extends Component {

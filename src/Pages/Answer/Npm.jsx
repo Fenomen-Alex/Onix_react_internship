@@ -2,7 +2,7 @@
 import React from 'react';
 import { useTranslation } from 'react-i18next';
 
-const NPM = () => {
+const Npm = () => {
   const { t } = useTranslation('translations');
   return (
     <div className="npm">
@@ -22,4 +22,4 @@ const NPM = () => {
   );
 };
 
-export default NPM;
+export default Npm;

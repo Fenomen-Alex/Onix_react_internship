@@ -2,7 +2,7 @@ import React from 'react';
 import { useTranslation } from 'react-i18next';
 import css from '../../assets/images/css.png';
 
-const CSS = () => {
+const Css = () => {
   const { t } = useTranslation('translations');
   return (
     <div className="css">
@@ -13,4 +13,4 @@ const CSS = () => {
   );
 };
 
-export default CSS;
+export default Css;

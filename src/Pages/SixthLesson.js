@@ -1,7 +1,7 @@
 /* eslint-disable no-console */
 import React from 'react';
 import { Table } from 'reactstrap';
-import { apiUrl, tableHeader } from '../Constants/Constants';
+import { apiUrl, tableHeader } from '../constants/constants';
 
 class TableFromITunes extends React.Component {
   // eslint-disable-next-line react/state-in-constructor

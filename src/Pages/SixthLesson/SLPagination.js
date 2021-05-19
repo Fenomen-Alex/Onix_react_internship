@@ -1,6 +1,7 @@
-/* eslint-disable no-plusplus,react/prop-types,react/no-array-index-key */
+/* eslint-disable react/no-array-index-key */
 import React from 'react';
 import { Pagination, PaginationItem, PaginationLink } from 'reactstrap';
+import PropTypes from 'prop-types';
 
 const SlPagination = (props) => {
   const {
@@ -51,6 +52,20 @@ const SlPagination = (props) => {
     </div>
 
   );
+};
+
+SlPagination.defaultProps = {
+  currentPage: 0,
+  totalCount: 0,
+  pageSize: 10,
+  setCurrentPage() {}
+};
+
+SlPagination.propTypes = {
+  currentPage: PropTypes.number,
+  totalCount: PropTypes.number,
+  pageSize: PropTypes.number,
+  setCurrentPage: PropTypes.func
 };
 
 export default SlPagination;

@@ -1,6 +1,5 @@
 import React from 'react';
-import { light } from '../Constants/Constants';
+import { light } from '../constants/constants';
 
-const theme = light;
-// eslint-disable-next-line import/prefer-default-export
-export const ThemeContext = React.createContext(theme);
+const ThemeContext = React.createContext(light);
+export default ThemeContext;

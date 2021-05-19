@@ -2,7 +2,7 @@ import React from 'react';
 import { useTranslation } from 'react-i18next';
 import git from '../../assets/images/git.png';
 
-const GIT = () => {
+const Git = () => {
   const { t } = useTranslation('translations');
   return (
     <div className="git">
@@ -39,4 +39,4 @@ const GIT = () => {
   );
 };
 
-export default GIT;
+export default Git;

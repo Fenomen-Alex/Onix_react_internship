@@ -1,22 +1,17 @@
 import React, { Component } from 'react';
 import { BrowserRouter as Router, Route, Switch } from 'react-router-dom';
-import Appheader from './components/header';
-import NavComp from './components/nav';
-import Answer from './pages/answer/answer';
-import Conspect from './pages/secondLesson';
-// eslint-disable-next-line import/no-cycle
-// import LessonThree from './pages/thirdLesson';
-// import LessonFour from './pages/fourthLesson';
-// import LessonSix from './pages/sixthLesson';
-import NineLessonText from './pages/NineLessonText';
-import AppTask from './pages/AppTask/AppTask';
-import AppFooter from './components/footer';
-// eslint-disable-next-line import/no-cycle
-import LessonThreeHooks from './pages/thirdLessonHooks';
-import LessonFourHooks from './pages/fourthLessonHooks';
-import LessonSixHooks from './pages/sixthLesson/sixthLessonHooks';
-import { dark, light } from './Constants/Constants';
-import { ThemeContext } from './context/themeContext';
+import Appheader from './Components/Header';
+import NavComp from './Components/Nav';
+import Answer from './Pages/Answer/Answer';
+import Conspect from './Pages/SecondLesson';
+import NineLessonText from './Pages/NineLessonText';
+import AppTask from './Pages/AppTask/AppTask';
+import AppFooter from './Components/Footer';
+import LessonThreeHooks from './Pages/ThirdLessonHooks';
+import LessonFourHooks from './Pages/FourthLessonHooks';
+import LessonSixHooks from './Pages/SixthLesson/SixthLessonHooks';
+import { dark, light } from './constants/constants';
+import ThemeContext from './context/themeContext';
 import './i18n';
 
 class App extends Component {

@@ -1,7 +1,7 @@
 /* eslint-disable react/prop-types,quotes */
 import React from 'react';
 import { Button } from 'reactstrap';
-import { dark } from '../Constants/Constants';
+import { dark } from '../constants/constants';
 
 const ThemeToggler = ({
   theme,

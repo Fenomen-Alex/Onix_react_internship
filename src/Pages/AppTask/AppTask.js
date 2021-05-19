@@ -1,7 +1,7 @@
 import React from 'react';
 
 import '../../assets/css/main.css';
-import TheTask from './theTask';
+import TheTask from './TheTask';
 import Content from './Content';
 
 const AppTask = () => {

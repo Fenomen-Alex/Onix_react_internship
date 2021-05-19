@@ -3,9 +3,8 @@ import React from 'react';
 import '../assets/css/main.css';
 import { useTranslation } from 'react-i18next';
 import {
-  // eslint-disable-next-line import/named
   footerContent
-} from '../Constants/Constants';
+} from '../constants/constants';
 
 const AppFooter = () => {
   const { t } = useTranslation('translations');

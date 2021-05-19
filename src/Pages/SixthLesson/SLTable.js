@@ -1,5 +1,5 @@
-/* eslint-disable react/prop-types */
 import React from 'react';
+import PropTypes from 'prop-types';
 
 const SlTable = (props) => {
   const {
@@ -109,6 +109,20 @@ const SlTable = (props) => {
     </tbody>
 
   );
+};
+
+SlTable.defaultProps = {
+  currentPage: 1,
+  data: [{}],
+  pageSize: 10,
+  getData() {}
+};
+
+SlTable.propTypes = {
+  currentPage: PropTypes.number,
+  data: PropTypes.arrayOf(PropTypes.object),
+  pageSize: PropTypes.number,
+  getData: PropTypes.func
 };
 
 export default SlTable;

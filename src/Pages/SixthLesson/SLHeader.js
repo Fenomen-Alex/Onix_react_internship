@@ -1,8 +1,9 @@
-/* eslint-disable react/prop-types,no-console */
+/* eslint-disable no-console */
 import React from 'react';
 import { Button } from 'reactstrap';
 import { useTranslation } from 'react-i18next';
-import { apiUrl } from '../../Constants/Constants';
+import PropTypes from 'prop-types';
+import { apiUrl } from '../../constants/constants';
 
 const SLHeader = (props) => {
   const { t } = useTranslation('translations');
@@ -34,6 +35,18 @@ const SLHeader = (props) => {
       </Button>
     </div>
   );
+};
+
+SLHeader.defaultProps = {
+  isFetching: false,
+  toggleIsFetching() {},
+  getData() {}
+};
+
+SLHeader.propTypes = {
+  isFetching: PropTypes.bool,
+  toggleIsFetching: PropTypes.func,
+  getData: PropTypes.func
 };
 
 export default SLHeader;

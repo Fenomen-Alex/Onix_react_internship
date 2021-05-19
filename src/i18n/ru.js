@@ -1,12 +1,4 @@
 /* eslint-disable quote-props,import/prefer-default-export,import/named */
-// import { content, task } from '../Constants/Constants';
-
-// eslint-disable-next-line import/prefer-default-export
-// export const ru = {
-//   task: { ...task },
-//   content: { ...content }
-// };
-
 import {
   content,
   cssText,
@@ -16,7 +8,7 @@ import {
   task,
   vscText,
   vscTitleRu
-} from '../Constants/Constants';
+} from '../constants/constants';
 
 export const ru = {
   translations: {

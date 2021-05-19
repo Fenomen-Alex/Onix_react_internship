@@ -1,9 +1,8 @@
 /* eslint-disable no-console */
 import React from 'react';
 import { Button, Table } from 'reactstrap';
-// eslint-disable-next-line import/no-cycle
-import StyledTheme from '../components/StyledWrapper';
-import {starWarsOriginal, starWarsPrequel, starWarsSequel } from '../Constants/Constants';
+import StyledTheme from '../Components/StyledWrapper';
+import { starWarsOriginal, starWarsPrequel, starWarsSequel } from '../constants/constants';
 
 class FilmTable extends React.Component {
   data = starWarsOriginal.concat(starWarsPrequel, starWarsSequel);

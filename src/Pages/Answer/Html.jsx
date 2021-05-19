@@ -2,7 +2,7 @@ import React from 'react';
 import { useTranslation } from 'react-i18next';
 import html from '../../assets/images/html.png';
 
-const HTML = () => {
+const Html = () => {
   const { t } = useTranslation('translations');
   return (
     <div className="html">
@@ -13,4 +13,4 @@ const HTML = () => {
   );
 };
 
-export default HTML;
+export default Html;

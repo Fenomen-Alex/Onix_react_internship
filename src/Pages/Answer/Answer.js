@@ -2,12 +2,12 @@ import React from 'react';
 import '../../assets/css/main.css';
 
 import { useTranslation } from 'react-i18next';
-import VCS from './vsc';
-import GIT from './git';
-import Node from './node';
-import NPM from './npm';
-import HTML from './html';
-import CSS from './css';
+import VCS from './Vsc';
+import Git from './Git';
+import Node from './Node';
+import Npm from './Npm';
+import Html from './Html';
+import Css from './Css';
 
 const Answer = () => {
   const { t } = useTranslation('translations');
@@ -16,11 +16,11 @@ const Answer = () => {
       <strong className="solution">{t('answer.solutionTitle')}</strong>
       <div className="wrapper">
         <VCS />
-        <GIT />
+        <Git />
         <Node />
-        <NPM />
-        <HTML />
-        <CSS />
+        <Npm />
+        <Html />
+        <Css />
       </div>
     </>
   );
