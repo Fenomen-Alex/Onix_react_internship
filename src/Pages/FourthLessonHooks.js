@@ -101,7 +101,7 @@ const LessonFourHooks = () => {
             <tr key={item.id}>
               <td>{item.year}</td>
               <td>{item.film}</td>
-              <Button color="secondary" onClick={() => removeById(item.id)}>-</Button>
+              <td><Button color="secondary" onClick={() => removeById(item.id)}>-</Button></td>
             </tr>
           ))}
         </tbody>

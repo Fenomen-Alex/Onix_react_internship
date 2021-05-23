@@ -4,8 +4,8 @@ import { Table } from 'reactstrap';
 import { useTranslation } from 'react-i18next';
 import { connect } from 'react-redux';
 import PropTypes from 'prop-types';
-import { apiUrl } from '../../constants/constants';
 import {
+  fetchDataThunk,
   getDataAC, setCurrentPageAC, setTotalCountAC, toggleIsFetchingAC
 } from '../../store/actions';
 import SLHeader from './SLHeader';
@@ -25,14 +25,15 @@ const mapDispatchToProps = ({
   getData: getDataAC,
   setCurrentPage: setCurrentPageAC,
   setTotalCount: setTotalCountAC,
-  toggleIsFetching: toggleIsFetchingAC
+  toggleIsFetching: toggleIsFetchingAC,
+  fetchData: fetchDataThunk
 });
 
 const LessonSixHooks = (props) => {
   const { t } = useTranslation('translations');
 
   const {
-    data, isFetching, currentPage, totalCount, getData, setCurrentPage, setTotalCount, toggleIsFetching, pageSize
+    data, isFetching, currentPage, totalCount, getData, setCurrentPage, toggleIsFetching, pageSize, fetchData
   } = props;
 
   const handleKeyDown = (e) => {
@@ -60,25 +61,7 @@ const LessonSixHooks = (props) => {
   };
 
   useEffect(() => {
-    toggleIsFetching(true);
-    fetch(apiUrl)
-      .then((response) => response.json())
-      .then(
-        (res) => {
-          getData(
-            res.results.map((item) => ({
-              ...item,
-              isActive: false,
-              isOver: false,
-            })),
-          );
-          toggleIsFetching(false);
-          setTotalCount(res.resultCount);
-        },
-        (error) => {
-          console.log(`Error : ${error}`);
-        }
-      );
+    fetchData();
   }, []);
 
   const onLoad = () => {
@@ -103,6 +86,7 @@ const LessonSixHooks = (props) => {
         isFetching={isFetching} 
         toggleIsFetching={toggleIsFetching}
         getData={getData}
+        fetchData={fetchData}
       />
       <SlPagination
         currentPage={currentPage}
@@ -137,8 +121,8 @@ LessonSixHooks.defaultProps = {
   isFetching: false,
   totalCount: 0,
   setCurrentPage: setCurrentPageAC,
-  setTotalCount: setTotalCountAC,
-  toggleIsFetching: toggleIsFetchingAC
+  toggleIsFetching: toggleIsFetchingAC,
+  fetchData() {}
 };
 
 LessonSixHooks.propTypes = {
@@ -149,8 +133,8 @@ LessonSixHooks.propTypes = {
   isFetching: PropTypes.bool,
   totalCount: PropTypes.number,
   setCurrentPage: PropTypes.func,
-  setTotalCount: PropTypes.func,
-  toggleIsFetching: PropTypes.func
+  toggleIsFetching: PropTypes.func,
+  fetchData: PropTypes.func,
 };
 
 export default connect(mapStateToProps, mapDispatchToProps)(LessonSixHooks);
