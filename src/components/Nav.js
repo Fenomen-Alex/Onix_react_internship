@@ -8,7 +8,7 @@ import {
 
 import '../assets/css/main.css';
 import ThemeToggler from './ThemeToggler';
-import { LangSwitcherBtn } from './LangSwitcherBtn';
+import LangSwitcherBtn from './LangSwitcherBtn';
 
 const NavComp = (props) => {
   return (

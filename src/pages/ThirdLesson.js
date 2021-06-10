@@ -1,7 +1,7 @@
 /* eslint-disable no-console */
 import React from 'react';
 import { Button, Table } from 'reactstrap';
-import StyledTheme from '../Components/StyledWrapper';
+import StyledTheme from '../components/StyledWrapper';
 import { starWarsOriginal, starWarsPrequel, starWarsSequel } from '../constants/constants';
 
 class FilmTable extends React.Component {

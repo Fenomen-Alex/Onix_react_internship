@@ -15,6 +15,7 @@ i18n
       ru,
       en,
     },
+    lng: 'en',
     debug: true,
     detection: {
       order: ['localStorage', 'cookie'],

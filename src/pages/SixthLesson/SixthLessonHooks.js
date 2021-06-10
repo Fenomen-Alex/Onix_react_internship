@@ -74,6 +74,7 @@ const LessonSixHooks = (props) => {
   
   useEffect(() => {
     document.addEventListener('keyup', handleKeyDown);
+    console.log(data);
 
     return () => {
       document.removeEventListener('keyup', handleKeyDown);

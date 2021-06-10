@@ -20,7 +20,13 @@ export const fetchDataThunk = () => (dispatch) => {
       (res) => {
         dispatch(getDataAC(
           res.results.map((item) => ({
-            ...item,
+            trackId: item.trackId,
+            artworkUrl60: item.artworkUrl60,
+            collectionCensoredName: item.collectionCensoredName,
+            collectionId: item.collectionId,
+            trackName: item.trackName,
+            artistName: item.artistName,
+            trackPrice: item.trackPrice,
             isActive: false,
             isOver: false,
           })),

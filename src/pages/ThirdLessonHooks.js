@@ -2,7 +2,7 @@
 import React, { useState } from 'react';
 import { Button, Table } from 'reactstrap';
 import { useTranslation } from 'react-i18next';
-import StyledTheme from '../Components/StyledWrapper';
+import StyledTheme from '../components/StyledWrapper';
 import {
   starWarsOriginal, starWarsPrequel, starWarsSequel
 } from '../constants/constants';

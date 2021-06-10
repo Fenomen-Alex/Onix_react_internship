@@ -5,8 +5,7 @@ import React, { useState } from 'react';
 import { useTranslation } from 'react-i18next';
 import lang from '../assets/images/lang512.png';
 
-// eslint-disable-next-line import/prefer-default-export
-export const LangSwitcherBtn = () => {
+const LangSwitcherBtn = () => {
   const { i18n } = useTranslation('translations');
   const changeLanguage = (lng) => {
     i18n.changeLanguage(lng);
@@ -26,3 +25,5 @@ export const LangSwitcherBtn = () => {
     </ButtonDropdown>
   );
 };
+
+export default LangSwitcherBtn;
